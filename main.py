@@ -102,7 +102,7 @@ try:
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
-                if asset.name in package_cache:
+                if (tag.tag_name, asset.name) in package_cache:
                     continue
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
@@ -114,7 +114,7 @@ try:
                         ["dpkg-scanpackages", "--multiversion", "."],
                         cwd=config.output_dir,
                     )
-                    package_cache[asset.name] = package.decode()
+                    package_cache[(tag.tag_name, asset.name)] = package.decode()
                     local_name.unlink()
 finally:
     cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
