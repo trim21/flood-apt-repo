@@ -134,7 +134,7 @@ def main():
                     reverse=True,
                 ),
             ):
-                print("processing", tag.tag_name, file=sys.stderr, flush=True)
+                print("processing", repo, tag.tag_name, file=sys.stderr, flush=True)
                 for asset in tag.assets:
                     if not asset.name.endswith(".deb"):
                         continue
@@ -148,6 +148,7 @@ def main():
                     local_name = local_dir.joinpath(asset.name)
                     print(
                         "processing",
+                        repo,
                         tag.tag_name,
                         asset.name,
                         file=sys.stderr,
