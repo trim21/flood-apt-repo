@@ -79,7 +79,7 @@ def copy_public_files():
         for file in files:
             out_file = Path(dir, file)
             src_file = config.output_dir.joinpath(out_file.relative_to(public))
-            print("copy", src_file.relative_to(root), "to", out_file)
+            print("copy", src_file.relative_to(root), "to", out_file, flush=True)
             out_file.write_bytes(src_file.read_bytes())
 
 
