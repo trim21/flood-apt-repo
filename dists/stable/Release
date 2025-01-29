@@ -1,15 +1,23 @@
 Architectures: all amd64 arm64 armhf i386
 Codename: stable
 Components: main
-Date: Wed, 29 Jan 2025 15:44:53 +0000
+Date: Wed, 29 Jan 2025 15:51:58 +0000
 Label: iBug
 Origin: deb-github.ibugone.com
 Suite: stable
 MD5Sum:
- 76ef3e8efe2aa68354736bcdbf6a00c2              171 Release
+ 83be0385292887ba4de52095f23d2ae3              171 Release
+ 1bfbcd41b93228de16e69ee4ad33c278             4500 amd64/Packages
+ 96ae396b9daedf5bd7f61d87a12eca75             4518 arm64/Packages
 SHA1:
- b341b33b68f533df36fa1f8282ff2f7ef7b55fa0              171 Release
+ 697c5a6f3bd0f142ffc28325649c4f6db72b93f5              171 Release
+ 73434af11a8a3fc8d74560bbed32196c26f1ae63             4500 amd64/Packages
+ 23c1f8f776f635e80be756289eb5c6f881bacfb5             4518 arm64/Packages
 SHA256:
- 13717d16e0349036152b0a6057af417bbeae8dbb638edeb1bbe4604d9ce10676              171 Release
+ 8ffce56115438ca89319ffc5586e071ed1eb936e9553e64c9e7044a912e5c8da              171 Release
+ 78d5ac2d556c1e4dcd750bb098dd2757615721184188de36e1c0448d880a6597             4500 amd64/Packages
+ 2a9c4dd7f64523d3ecf435cfb348e9f7821bea9a53bca1547db1213f5ede0d18             4518 arm64/Packages
 SHA512:
- 13b7649d1b54e7215caa3b8cc501f389a8851cc4b7a38d99c858c7dc6491f989a359c7a8fd76f2867cfc647927953d1814bbbaafc63549ce336209b3f4cb6809              171 Release
+ 842cb04d7aca8966da87b66ff208f7beec4e7d6cfb19f58200c824c331184f3ddb8fe17bdc03e6d632c977e150cb4a6ad3143d462689c35a93cc1205fbbd701f              171 Release
+ e0fbb76f74515d6cff206e74e6676e4f2b55bc9df804f185bdce04ecd9bf45b6c6068414cae102df6c1d4657122d8b67a78ec81f339573f67413daa0753b9b78             4500 amd64/Packages
+ 98be50af61a41efe390a1f1939b9e414bee0c2bd96b84f4134493461a3b404cbfbf17bbcfe7e8e2d4e6b2353be758b69e798b0cebb5e3d522be118a207ed58c2             4518 arm64/Packages
