@@ -13,8 +13,8 @@ import yaml
 
 
 headers = {}
-if "GITHUB_TOEKN" in os.environ:
-    headers["Authorization"] = "token " + os.environ["GITHUB_TOKEN"]
+if "PAT" in os.environ:
+    headers["Authorization"] = "token " + os.environ["PAT"]
 
 with open("config.yml", "r") as f:
     config = yaml.load(f, Loader=yaml.SafeLoader)
