@@ -67,13 +67,24 @@ class Release:
     published_at: datetime
 
 
-config = parse_obj_as(
-    Config, tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
-)
+@dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
+class PackageCache:
+    tag: str
+    filename: str
+    published_at: datetime
+    arch: str
+    package: str
 
 
 root = Path(__file__).parent
 public = root.joinpath("public")
+
+config = parse_obj_as(
+    Config, tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
+)
+
+pool_root = config.output_dir.joinpath("pool", config.component)
+release_dir = config.output_dir.joinpath("dists", config.suite)
 
 
 def copy_public_files():
@@ -91,30 +102,14 @@ def copy_public_files():
             dist_file.write_bytes(src_file.read_bytes())
 
 
-@dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
-class Cache:
-    tag: str
-    filename: str
-    published_at: datetime
-    arch: str
-    package: str
-
-
-def main():
-    pool_root = config.output_dir.joinpath("pool", config.component)
-    release_dir = config.output_dir.joinpath("dists", config.suite)
-
-    with contextlib.suppress(FileNotFoundError):
-        shutil.rmtree(release_dir.joinpath(config.component))
-
-    release_dir.mkdir(parents=True, exist_ok=True)
-    pool_root.mkdir(exist_ok=True, parents=True)
-
-    package_cache: list[Cache] = []
-    cache_file_path = config.output_dir.joinpath("package-cache.json")
+def handle_repo(repo: str):
+    package_cache: list[PackageCache] = []
+    cache_file_path = config.output_dir.joinpath(
+        "package-cache-{}.json".format(repo.replace("/", "-"))
+    )
     try:
         package_cache = parse_obj_as(
-            list[Cache], json.loads(cache_file_path.read_bytes())
+            list[PackageCache], json.loads(cache_file_path.read_bytes())
         )
     except (json.JSONDecodeError, pydantic.ValidationError):
         cache_file_path.unlink(missing_ok=True)
@@ -174,7 +169,7 @@ def main():
                             )
                         arch = m.group(1)
                         package_cache.append(
-                            Cache(
+                            PackageCache(
                                 tag=tag.tag_name,
                                 filename=asset.name,
                                 arch=arch,
@@ -193,12 +188,7 @@ def main():
             sort_keys=True,
             default=encode_json,
         )
-        changed = True
-        if cache_file_path.exists():
-            changed = new_packages != cache_file_path.read_text(encoding="utf-8")
-        if changed:
-            print("package changes")
-            cache_file_path.write_text(new_packages)
+        cache_file_path.write_text(new_packages)
 
     for release in package_cache:
         top_dir = release_dir.joinpath(
@@ -208,8 +198,23 @@ def main():
         with top_dir.joinpath("Packages").open("a+") as f:
             f.write(release.package)
 
+
+def main():
+    config.output_dir.mkdir(exist_ok=True, parents=True)
+
+    copy_public_files()
+
+    with contextlib.suppress(FileNotFoundError):
+        shutil.rmtree(release_dir.joinpath(config.component))
+
+    release_dir.mkdir(parents=True, exist_ok=True)
+    pool_root.mkdir(exist_ok=True, parents=True)
+
+    for repo in sorted(config.repositories):
+        handle_repo(repo)
+
     # Generate the "Release" file
-    if IS_CI and changed:
+    if IS_CI:
         with release_dir.joinpath("Release").open("wb") as f:
             subprocess.run(
                 [
@@ -231,5 +236,4 @@ def encode_json(val: Any):
     raise TypeError(f"Cannot serialize object of {type(val)}")
 
 
-copy_public_files()
 main()
