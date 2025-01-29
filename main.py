@@ -157,7 +157,7 @@ finally:
 
 for release in package_cache:
     print(release.filename)
-    top_dir = release_dir.joinpath(release.arch)
+    top_dir = release_dir.joinpath(config.component, release.arch)
     top_dir.mkdir(exist_ok=True, parents=True)
     with top_dir.joinpath("Packages").open("a+") as f:
         f.write(release.package)
