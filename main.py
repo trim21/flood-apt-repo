@@ -106,15 +106,11 @@ try:
                 deb = client.get(asset.browser_download_url, follow_redirects=True)
                 local_name.write_bytes(deb.content)
                 if IS_CI:
-                    with io.BytesIO() as f:
-                        subprocess.run(
-                            ["dpkg-scanpackages", "--multiversion", "."],
-                            stdin=subprocess.DEVNULL,
-                            stdout=f,
-                            cwd=config.output_dir,
-                            check=True,
-                        )
-                        package_cache[asset.name] = f.getvalue()
+                    package = subprocess.check_output(
+                        ["dpkg-scanpackages", "--multiversion", "."],
+                        cwd=config.output_dir,
+                    )
+                    package_cache[asset.name] = package
                 local_name.unlink()
 finally:
     cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
