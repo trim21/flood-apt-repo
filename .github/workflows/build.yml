@@ -33,7 +33,7 @@ jobs:
           git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --branch gh-pages --depth=1 dist
 
       - name: Generate package index
-        run: python main.py
+        run: uv run python main.py
         env:
           PAT: ${{ secrets.PAT }}
 
