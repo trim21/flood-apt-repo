@@ -1,4 +1,5 @@
 import functools
+import re
 import json
 import os
 from pathlib import Path
@@ -9,6 +10,7 @@ from typing import Any, TypeVar
 import httpx
 import dataclasses
 from pydantic import TypeAdapter
+import pydantic
 
 IS_CI = "CI" in os.environ
 
@@ -17,6 +19,9 @@ if "PAT" in os.environ:
     headers["Authorization"] = "token " + os.environ["PAT"]
 
 client = httpx.Client(headers=headers)
+
+
+arch_pattern = re.compile(r"Architecture: ([\n]*)\n")
 
 
 _T = TypeVar("_T")
@@ -69,10 +74,19 @@ release_dir.mkdir(exist_ok=True, parents=True)
 
 cache_file_path = config.output_dir.joinpath("hash-cache.json")
 
-package_cache = {}
+
+@dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
+class Cache:
+    tag: str
+    filename: str
+    arch: str
+    package: str
+
+
+package_cache: list[Cache] = []
 try:
-    package_cache = json.loads(cache_file_path.read_bytes())
-except json.JSONDecodeError:
+    package_cache = parse_obj_as(list[Cache], json.loads(cache_file_path.read_bytes()))
+except (json.JSONDecodeError, pydantic.ValidationError):
     cache_file_path.unlink(missing_ok=True)
 except FileNotFoundError:
     pass
@@ -94,8 +108,10 @@ try:
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
-                cache_key = "{}/{}".format(tag.tag_name, asset.name)
-                if cache_key in package_cache:
+                if any(
+                    (cache.tag == tag.tag_name and cache.filename == asset.name)
+                    for cache in package_cache
+                ):
                     continue
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
@@ -107,10 +123,29 @@ try:
                         ["dpkg-scanpackages", "--multiversion", "."],
                         cwd=config.output_dir,
                     )
-                    package_cache[cache_key] = package.decode()
+                    pkg = package.decode()
+                    m = arch_pattern.search(pkg)
+                    if not m:
+                        raise ValueError(
+                            "can not find arch in package file {!r}".format(pkg)
+                        )
+                    arch = m.group(1)
+                    package_cache.append(
+                        Cache(
+                            tag=tag.tag_name,
+                            filename=asset.name,
+                            arch=arch,
+                            package=pkg,
+                        )
+                    )
+
                     local_name.unlink()
 finally:
-    cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
+    cache_file_path.write_text(
+        json.dumps(
+            [dataclasses.asdict(c) for c in package_cache], ensure_ascii=False, indent=2
+        )
+    )
 
 # packages_file = open(os.path.join(release_dir, "Packages"), "w")
 # for repo in config.repositories:
@@ -191,10 +226,10 @@ finally:
 
 
 # # Generate the "Release" file
-# with open(os.path.join(release_dir, "Release"), "wb") as f:
-#     subprocess.run(
-#         ["apt-ftparchive", "-c", f"{suite}.conf", "release", release_dir],
-#         stdin=subprocess.DEVNULL,
-#         stdout=f,
-#         check=True,
-#     )
+with release_dir.joinpath("Release").open("wb") as f:
+    subprocess.run(
+        ["apt-ftparchive", "-c", f"{config.suite}.conf", "release", release_dir],
+        stdin=subprocess.DEVNULL,
+        stdout=f,
+        check=True,
+    )
