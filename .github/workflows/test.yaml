@@ -1,0 +1,22 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+  schedule:
+    - cron: "30 23 * * *"
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "deb [trusted=yes] https://flood-apt-repo.pages.dev/ devel main" | sudo tee /etc/apt/sources.list.d/jesec.list
+
+      - run: sudo apt-get update -y
+      - run: sudo apt-get install flood -y
