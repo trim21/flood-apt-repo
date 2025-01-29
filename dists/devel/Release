@@ -1,0 +1,21 @@
+Architectures: amd64 arm64
+Components: main
+Date: Wed, 29 Jan 2025 19:42:37 +0000
+Label: jesec
+Suite: devel
+MD5Sum:
+ f0dbd880b72061e36b7c8b6683c0cf02              108 Release
+ 55de2e68d00cd46562b7ac5b90e9497b             5500 main/binary-amd64/Packages
+ d4148a9b75e0a47cf26e9b43e647b9f5             5522 main/binary-arm64/Packages
+SHA1:
+ e986e1509b9c3de33125dc26df7d2bb0d67e873d              108 Release
+ ec0a541f72ee6e0bf9c4c13adc36cb255a4b7c11             5500 main/binary-amd64/Packages
+ 1cb9fdbc0e5193190a64a44c0cd42f67379f6b94             5522 main/binary-arm64/Packages
+SHA256:
+ c9819482c9eaf8876bf0d3f77130777fa9a2af8957aff2a0ea69581d6c420cd3              108 Release
+ eea541f7d7e4e3a6049658cd95203f7e2e712ea10527a3ed2fdbcf9343fbea7b             5500 main/binary-amd64/Packages
+ 03d7e55899aa4b870d145c9deb888ca23223324b4ec8ace12a4b776e181ec69f             5522 main/binary-arm64/Packages
+SHA512:
+ 962160f5f3863e1bfeb68422f42ac623066cdd1b3169cecb95de0930f70e9736ee69182368235b2470373bd739397cf1ef70e43e8c2894c108fe504fd7d062aa              108 Release
+ a9d462e65356826de71891564d8814815b1fe31374521d9f8951a9b7da7ff494c046857151d308a6667baba6e2e03ae8059b672d7bb5a3933fea633042942e22             5500 main/binary-amd64/Packages
+ 6da7f6c3e839001308ae15c5a78bd2062380f7681aadb776ce95f28de0464d12e103343680911f78fa2d36565adebc267b877f544a7adcbace3f5772b0a56fd0             5522 main/binary-arm64/Packages
