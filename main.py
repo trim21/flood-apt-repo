@@ -102,7 +102,7 @@ try:
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
                 local_name = local_dir.joinpath(asset.name)
-                deb = client.get(asset.browser_download_url)
+                deb = client.get(asset.browser_download_url, follow_redirects=True)
                 local_name.write_bytes(deb.content)
                 if IS_CI:
                     subprocess.run(
