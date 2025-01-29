@@ -1,21 +1,13 @@
-#!/usr/bin/python3
-
-import contextlib
 import functools
-import io
 import json
 import os
 from pathlib import Path
-import shutil
 import subprocess
-import sys
-import traceback
 import tomllib
 from typing import Any, TypeVar
 
 import httpx
 import dataclasses
-
 from pydantic import TypeAdapter
 
 IS_CI = "CI" in os.environ
