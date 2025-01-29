@@ -1,2 +1,0 @@
-/ https://github.com/jesec/flood 302
-/pool/main/:user/:repo/:tag/:filename https://github.com/:user/:repo/releases/download/:tag/:filename 302

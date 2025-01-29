@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tomllib
 from typing import Any, TypeVar
 
@@ -68,19 +69,19 @@ config = parse_obj_as(
     Config, tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
 )
 
-pool_root = config.output_dir.joinpath("pool", config.component)
-release_dir = config.output_dir.joinpath("dists", config.suite)
-
-with contextlib.suppress(FileNotFoundError):
-    shutil.rmtree(release_dir)
-release_dir.mkdir(parents=True)
-pool_root.mkdir(exist_ok=True, parents=True)
-
 
 root = Path(__file__).parent
-config.output_dir.joinpath("_redirects").write_bytes(
-    root.joinpath("_redirects").read_bytes()
-)
+public = root.joinpath("public")
+
+
+def copy_public_files():
+    for dir, _, files in os.walk(public):
+        for file in files:
+            out_file = Path(dir, file)
+            print(Path(dir, file))
+            config.output_dir.joinpath(out_file.relative_to(public)).write_bytes(
+                out_file.read_bytes()
+            )
 
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
@@ -91,90 +92,123 @@ class Cache:
     package: str
 
 
-package_cache: list[Cache] = []
-cache_file_path = config.output_dir.joinpath("package-cache.json")
-try:
-    package_cache = parse_obj_as(list[Cache], json.loads(cache_file_path.read_bytes()))
-except (json.JSONDecodeError, pydantic.ValidationError):
-    cache_file_path.unlink(missing_ok=True)
-except FileNotFoundError:
-    pass
+def main():
 
-try:
-    for repo in config.repositories:
-        for tag in parse_obj_as(
-            list[Release],
-            (
-                client.get(
-                    f"https://api.github.com/repos/{repo}/releases",
-                    headers=headers,
-                    params={"per_page": 100},
-                )
-                .raise_for_status()
-                .json()
-            ),
-        ):
-            print("processing", tag.tag_name)
-            for asset in tag.assets:
-                if not asset.name.endswith(".deb"):
-                    continue
-                if any(
-                    (cache.tag == tag.tag_name and cache.filename == asset.name)
-                    for cache in package_cache
-                ):
-                    continue
-                local_dir = pool_root.joinpath(repo, tag.tag_name)
-                local_dir.mkdir(exist_ok=True, parents=True)
-                local_name = local_dir.joinpath(asset.name)
-                print("processing", tag.tag_name, asset.name)
-                deb = client.get(asset.browser_download_url, follow_redirects=True)
-                local_name.write_bytes(deb.content)
-                if IS_CI:
-                    package = subprocess.check_output(
-                        ["dpkg-scanpackages", "--multiversion", "."],
-                        cwd=config.output_dir,
-                    )
-                    pkg = package.decode()
-                    m = arch_pattern.search(pkg)
-                    if not m:
-                        raise ValueError(
-                            "can not find arch in package file {!r}".format(pkg)
-                        )
-                    arch = m.group(1)
-                    package_cache.append(
-                        Cache(
-                            tag=tag.tag_name,
-                            filename=asset.name,
-                            arch=arch,
-                            package=pkg,
-                        )
-                    )
+    pool_root = config.output_dir.joinpath("pool", config.component)
+    release_dir = config.output_dir.joinpath("dists", config.suite)
 
-                    local_name.unlink()
-finally:
-    # remove leading prefix `v`
-    package_cache.sort(
-        key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch), reverse=True
-    )
-    cache_file_path.write_text(
-        json.dumps(
-            [dataclasses.asdict(c) for c in package_cache], ensure_ascii=False, indent=2
+    with contextlib.suppress(FileNotFoundError):
+        shutil.rmtree(release_dir)
+    release_dir.mkdir(parents=True)
+    pool_root.mkdir(exist_ok=True, parents=True)
+
+    package_cache: list[Cache] = []
+    cache_file_path = config.output_dir.joinpath("package-cache.json")
+    try:
+        package_cache = parse_obj_as(
+            list[Cache], json.loads(cache_file_path.read_bytes())
         )
-    )
+    except (json.JSONDecodeError, pydantic.ValidationError):
+        cache_file_path.unlink(missing_ok=True)
+    except FileNotFoundError:
+        pass
 
-for release in package_cache:
-    top_dir = release_dir.joinpath(config.component, "binary-{}".format(release.arch))
-    top_dir.mkdir(exist_ok=True, parents=True)
-    with top_dir.joinpath("Packages").open("a+") as f:
-        f.write(release.package)
+    try:
+        for repo in config.repositories:
+            for tag in parse_obj_as(
+                list[Release],
+                (
+                    client.get(
+                        f"https://api.github.com/repos/{repo}/releases",
+                        headers=headers,
+                        params={"per_page": 100},
+                    )
+                    .raise_for_status()
+                    .json()
+                ),
+            ):
+                print("processing", tag.tag_name, file=sys.stderr, flush=True)
+                for asset in tag.assets:
+                    if not asset.name.endswith(".deb"):
+                        continue
+                    if any(
+                        (cache.tag == tag.tag_name and cache.filename == asset.name)
+                        for cache in package_cache
+                    ):
+                        continue
+                    local_dir = pool_root.joinpath(repo, tag.tag_name)
+                    local_dir.mkdir(exist_ok=True, parents=True)
+                    local_name = local_dir.joinpath(asset.name)
+                    print(
+                        "processing",
+                        tag.tag_name,
+                        asset.name,
+                        file=sys.stderr,
+                        flush=True,
+                    )
+                    deb = client.get(
+                        asset.browser_download_url, follow_redirects=True, timeout=30
+                    )
+                    local_name.write_bytes(deb.content)
+                    if IS_CI:
+                        package = subprocess.check_output(
+                            ["dpkg-scanpackages", "--multiversion", "."],
+                            cwd=config.output_dir,
+                        )
+                        pkg = package.decode()
+                        m = arch_pattern.search(pkg)
+                        if not m:
+                            raise ValueError(
+                                "can not find arch in package file {!r}".format(pkg)
+                            )
+                        arch = m.group(1)
+                        package_cache.append(
+                            Cache(
+                                tag=tag.tag_name,
+                                filename=asset.name,
+                                arch=arch,
+                                package=pkg,
+                            )
+                        )
 
-
-# Generate the "Release" file
-if IS_CI:
-    with release_dir.joinpath("Release").open("wb") as f:
-        subprocess.run(
-            ["apt-ftparchive", "-c", f"{config.suite}.conf", "release", release_dir],
-            stdin=subprocess.DEVNULL,
-            stdout=f,
-            check=True,
+                        local_name.unlink()
+    finally:
+        # remove leading prefix `v`
+        package_cache.sort(
+            key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch), reverse=True
         )
+        cache_file_path.write_text(
+            json.dumps(
+                [dataclasses.asdict(c) for c in package_cache],
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+
+    for release in package_cache:
+        top_dir = release_dir.joinpath(
+            config.component, "binary-{}".format(release.arch)
+        )
+        top_dir.mkdir(exist_ok=True, parents=True)
+        with top_dir.joinpath("Packages").open("a+") as f:
+            f.write(release.package)
+
+    # Generate the "Release" file
+    if IS_CI:
+        with release_dir.joinpath("Release").open("wb") as f:
+            subprocess.run(
+                [
+                    "apt-ftparchive",
+                    "-c",
+                    f"{config.suite}.conf",
+                    "release",
+                    release_dir,
+                ],
+                stdin=subprocess.DEVNULL,
+                stdout=f,
+                check=True,
+            )
+
+
+copy_public_files()
+main()
