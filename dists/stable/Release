@@ -1,23 +1,23 @@
 Architectures: all amd64 arm64 armhf i386
 Codename: stable
 Components: main
-Date: Wed, 29 Jan 2025 15:55:48 +0000
+Date: Wed, 29 Jan 2025 16:01:03 +0000
 Label: iBug
 Origin: deb-github.ibugone.com
 Suite: stable
 MD5Sum:
- 75cff5dbbade5d78e432e6a3f800d60b              171 Release
- 426e04c001df1b9082f33f5abab34f8d            13500 amd64/Packages
- da86f203236f39dccab888dd7aa6b930            13554 arm64/Packages
+ 42945910d4c35ec7f96ed0f2e2536cd9              171 Release
+ cd6ccf58a5fd870a7cdb5a536be1e1dc            18000 amd64/Packages
+ 39c46abf6948a58484d6afd700593ff6            18072 arm64/Packages
 SHA1:
- e096b6d4b06bf6277fcc20add4dca7864133b84d              171 Release
- ec13ffcb1a97092e46200845abfc18a0a429ae2a            13500 amd64/Packages
- 304747043cd8df0bcd84db436d372f27b07a4516            13554 arm64/Packages
+ b68c3a0ce7a3de1f1ab06a0a04f54af2da76a232              171 Release
+ 7c795e68c8d1c0530c39f4710c0db402f84b4226            18000 amd64/Packages
+ 5ad03b440280b66e84a2521a471f7dcf3c302ee1            18072 arm64/Packages
 SHA256:
- e185f662b29555565033a517017bc9af724e10adfb7b7e97ca87cb7999e8ead6              171 Release
- d608f2793d59a386a1596dba2f602069783b705d88caa2b266398ea59b935af6            13500 amd64/Packages
- 584fe2528ecaf78b134ec660ff16274dc3d2b488c0ddcc9358d75dfd8d0a0019            13554 arm64/Packages
+ e9c5d38e0656363db021f07a25431b88c43a39d67790d557acbc8b062fb49a51              171 Release
+ fe466bc836462ef7a314f1dd8b87c819086799ffc101d10fb154dac26c2f5af4            18000 amd64/Packages
+ 09557e0fdd97b10487e117e9672fba8676e6acf6ce88ea0c35f82ace470c927b            18072 arm64/Packages
 SHA512:
- c81459c192b01c198410b0b8d81cf7ecedb9b8312cd4a6a08d7e7333fee5653a35dc6332e1d537d7a03b01b199a2458cf2f0dead06c742e1b51ed2635f35134d              171 Release
- 67cb4383e624f1f5684df32636bc3d7e4a09a0bd3eadec710d9c819455aa73a97150b21a0b5ef8937cb3ff5f6de11c6cb7c6aa449774bff9230e1ac5ffe9d229            13500 amd64/Packages
- ee8e96c55c25cf505d12eef60724253d9846babb53a2aec8ab844249146955721f59873c51f78265f1bd9476a2d7f97602d8d02a6249368650cd33b35cf88280            13554 arm64/Packages
+ bcc7c7e62e156b437f92147476d92b74d755debb24ab428eda6725d360ebbf60f80178b4bf648db2fc873fb7eaf20567d6af7c73b9fc5c2a373387a9f8a08f79              171 Release
+ f06f85b1b7b87e43d7d50f655c5d8c201daa9cc850d3895832c3be77a9d2b258853baae6a2d6617192e7b03283bdfce9a7facc2e1576f20dc8ca8ad1a7413344            18000 amd64/Packages
+ 8264e9e8ea1eb03af6afd5530431c2ae9eda35d4bc0e69cf3893aac9c9e857032d3738a899f6b0720b8dcbbc54b14de572d404625b1ac39ca591070c78d5ea28            18072 arm64/Packages
