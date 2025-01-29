@@ -78,10 +78,9 @@ def copy_public_files():
     for dir, _, files in os.walk(public):
         for file in files:
             out_file = Path(dir, file)
-            print(Path(dir, file))
-            config.output_dir.joinpath(out_file.relative_to(public)).write_bytes(
-                out_file.read_bytes()
-            )
+            src_file = config.output_dir.joinpath(out_file.relative_to(public))
+            print("copy", src_file, "to", out_file)
+            src_file.write_bytes(out_file.read_bytes())
 
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
