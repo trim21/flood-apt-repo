@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import bz2
+import contextlib
 import gzip
 import io
 import os
@@ -35,7 +36,7 @@ packages_file = open(os.path.join(release_dir, "Packages"), "w")
 for repo in repositories:
     print(f"{repo}:", file=sys.stderr)
     try:
-        latest = requests.get(f"https://api.github.com/repos/{repo}/releases/latest", headers=headers).json()
+        latest = requests.get(f"https://api.github.com/repos/{repo}/releases/v4.8.2", headers=headers).json()
         tag_name = latest["tag_name"]
         for asset in latest["assets"]:
             if not asset["name"].endswith(".deb"):
@@ -61,11 +62,9 @@ for repo in repositories:
             subprocess.run(["dpkg-scanpackages", "--multiversion", "."],
                 stdin=subprocess.DEVNULL, stdout=packages_file,
                 cwd=output_dir, check=True)
-            try:
+            with contextlib.suppress(FileNotFoundError):
                 shutil.rmtree(pool_root)
-            except FileNotFoundError:
-                pass
-    except Exception as e:
+    except Exception:
         traceback.print_exc()
 
 if "CI" not in os.environ:
