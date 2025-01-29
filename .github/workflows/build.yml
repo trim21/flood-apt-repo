@@ -27,7 +27,7 @@ jobs:
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v5
 
-      - run: uv sync --python=system --frozen
+      - run: uv sync --frozen
 
       - run: |
           git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --branch gh-pages --depth=1 dist
