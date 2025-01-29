@@ -1,22 +1,21 @@
 Architectures: all amd64 arm64 armhf i386
-Codename: devel
 Components: main
-Date: Wed, 29 Jan 2025 17:48:16 +0000
+Date: Wed, 29 Jan 2025 17:49:06 +0000
 Label: jesec
 Suite: devel
 MD5Sum:
- cd0a5733ee6c414eb56e9e74dcfecac1              139 Release
+ 90fb2137d6dad9b1784bf9d7953d169d              123 Release
  be16800efe937744db3faf4b878d90ae             5000 main/binary-amd64/Packages
  51a9d2f4d3bac41b16528fa11a8dfdc4             5020 main/binary-arm64/Packages
 SHA1:
- 9aa091f3aa67c1df53d7ec73266e0e6cf1628ecc              139 Release
+ c621df84a6546d193fd82c33d0365913030d6aed              123 Release
  cd71e6cfd6d13c4cf8d801ff9a8ae95af2752003             5000 main/binary-amd64/Packages
  0423f4bb2d2111c894de415bdd7082d97c582319             5020 main/binary-arm64/Packages
 SHA256:
- bf913866bb851dc1042bb697c713a8ac317dd8329db300c298fbb706bfa522cb              139 Release
+ ec7e286a0bd24101d2d9c2c943140124d0fd16a0bbc450feeb8eb685636a7038              123 Release
  f2c83f225b39f895f42b05f7fbb05c8a22e2c84390fab7986ffd9d5852180b9e             5000 main/binary-amd64/Packages
  c6f88a1f077591581877845cd43f0554c1af9c01f834793181f93e249d54f28c             5020 main/binary-arm64/Packages
 SHA512:
- e175ca98b62f407d463a049bc77722d58129ae4ffbaf05d50aed8276932a327a3feb477e45c25adb44fa0350ce516c524c0bf08b450b23a0e57de679b53421c7              139 Release
+ 7fe34e30fda5e6a04947f78043a68bcc89aff6aa1590cf12afb30018bed1539a9e89c4de4d5b21f15d06c65ea66c57021f7b9da8093f5bef9ad33f1b02eee0d8              123 Release
  35290d3695ec3e9a15972489ecfc5540d9f35be741910ed2ae2e90dab2058a69a72624cc0fa89c2bbbaa6a3f2ec5f4c6b4729a0a3a6457ad734d3c7996eea877             5000 main/binary-amd64/Packages
  40da237f834b5a74ffb83682fdfdad007a264374b272f17c67a3785f19a1ca73a722315156c4aef79273e711a5010b94ebca70bad90b00d8aa95e6db1d129175             5020 main/binary-arm64/Packages
