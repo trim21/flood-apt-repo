@@ -191,6 +191,7 @@ def main():
             ensure_ascii=False,
             indent=2,
             sort_keys=True,
+            default=encode_json,
         )
         changed = True
         if cache_file_path.exists():
@@ -222,6 +223,12 @@ def main():
                 stdout=f,
                 check=True,
             )
+
+
+def encode_json(val: Any):
+    if isinstance(val, datetime):
+        return val.isoformat()
+    raise TypeError(f"Cannot serialize object of {type(val)}")
 
 
 copy_public_files()
