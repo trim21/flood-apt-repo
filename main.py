@@ -1,8 +1,10 @@
+import contextlib
 import functools
 import re
 import json
 import os
 from pathlib import Path
+import shutil
 import subprocess
 import tomllib
 from typing import Any, TypeVar
@@ -69,8 +71,10 @@ config = parse_obj_as(
 pool_root = config.output_dir.joinpath("pool", config.component)
 release_dir = config.output_dir.joinpath("dists", config.suite)
 
+with contextlib.suppress(FileNotFoundError):
+    shutil.rmtree(release_dir)
+release_dir.mkdir(parents=True)
 pool_root.mkdir(exist_ok=True, parents=True)
-release_dir.mkdir(exist_ok=True, parents=True)
 
 
 cache_file_path = config.output_dir.joinpath("hash-cache.json")
@@ -156,8 +160,7 @@ finally:
     )
 
 for release in package_cache:
-    print(release.filename)
-    top_dir = release_dir.joinpath(config.component, release.arch)
+    top_dir = release_dir.joinpath(config.component, "binary-{}".format(release.arch))
     top_dir.mkdir(exist_ok=True, parents=True)
     with top_dir.joinpath("Packages").open("a+") as f:
         f.write(release.package)
