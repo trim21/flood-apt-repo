@@ -1,11 +1,5 @@
 [
   {
-    "arch": "arm64",
-    "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-arm64.deb\nSize: 27375734\nMD5sum: 6641537eb1f73fd6231372bc539babfb\nSHA1: 8da49aac24edb49dff6ee78138e594b697cf3231\nSHA256: 87e344be58b22225e6e8a12873d2206623eec26d75d09c983e0fecb829c44e05\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.9.3"
-  },
-  {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-x64.deb\nSize: 27714958\nMD5sum: d687605027a161962370b06433ea7597\nSHA1: 45a102b97d50851a6511182205d593d9af0132a9\nSHA256: 3fa3826a15a765f97756bc6a026be5423cdf0b9cdc7c91207cce4904a6c6ab39\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
@@ -14,8 +8,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.9.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.2/flood-linux-arm64.deb\nSize: 27423800\nMD5sum: d3a0496ac2c44e204e3b5e1cbb63404d\nSHA1: b0561c560819946929b4457a1a78f995962b0c7e\nSHA256: e2acb29fc0a572a4053c1f11de6dd7e71a86c72d3dafe1009a46c932ed53d2d3\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.9.2"
+    "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-arm64.deb\nSize: 27375734\nMD5sum: 6641537eb1f73fd6231372bc539babfb\nSHA1: 8da49aac24edb49dff6ee78138e594b697cf3231\nSHA256: 87e344be58b22225e6e8a12873d2206623eec26d75d09c983e0fecb829c44e05\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.9.3"
   },
   {
     "arch": "amd64",
@@ -26,8 +20,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.8.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.8.2/flood-linux-arm64.deb\nSize: 25875840\nMD5sum: fee238254e8198ae059b188ba4c80a70\nSHA1: 1baa87c6842ef19dadea1ddd2b2442db6f09158f\nSHA256: da61fe0d50ba90c830b6285710a5f7991a054e6956b7405f1d9c1948855f4418\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.8.2"
+    "package": "Package: flood\nVersion: 4.9.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.2/flood-linux-arm64.deb\nSize: 27423800\nMD5sum: d3a0496ac2c44e204e3b5e1cbb63404d\nSHA1: b0561c560819946929b4457a1a78f995962b0c7e\nSHA256: e2acb29fc0a572a4053c1f11de6dd7e71a86c72d3dafe1009a46c932ed53d2d3\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.9.2"
   },
   {
     "arch": "amd64",
@@ -38,8 +32,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.6.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.6.1/flood-linux-arm64.deb\nSize: 17710202\nMD5sum: 5bcecdcf3696b2758cd8e4f647ea9ea1\nSHA1: f9f36ea3c7041e71e7c2cc14ff7bcb905be00e08\nSHA256: c696b8c81b4e3863071398fd0bf383aafbff2313283c319cd1e96b173e448908\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.6.1"
+    "package": "Package: flood\nVersion: 4.8.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.8.2/flood-linux-arm64.deb\nSize: 25875840\nMD5sum: fee238254e8198ae059b188ba4c80a70\nSHA1: 1baa87c6842ef19dadea1ddd2b2442db6f09158f\nSHA256: da61fe0d50ba90c830b6285710a5f7991a054e6956b7405f1d9c1948855f4418\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.8.2"
   },
   {
     "arch": "amd64",
@@ -50,8 +44,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.6.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.6.0/flood-linux-arm64.deb\nSize: 17612952\nMD5sum: 26106d101fe7ceab9f43e88c1b3d204d\nSHA1: 677b98aaab83a67ff042a69d95836da618ceaeb1\nSHA256: fb6ff3214181c78d34383bbfdcd8e7309d2b99a2d0f5e4db0beef4472add43c6\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.6.0"
+    "package": "Package: flood\nVersion: 4.6.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.6.1/flood-linux-arm64.deb\nSize: 17710202\nMD5sum: 5bcecdcf3696b2758cd8e4f647ea9ea1\nSHA1: f9f36ea3c7041e71e7c2cc14ff7bcb905be00e08\nSHA256: c696b8c81b4e3863071398fd0bf383aafbff2313283c319cd1e96b173e448908\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.6.1"
   },
   {
     "arch": "amd64",
@@ -62,8 +56,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.5.4-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.4/flood-linux-arm64.deb\nSize: 14827584\nMD5sum: 7cfdcf14a2ee1058bdeae7f2eccbbbd1\nSHA1: ccc5a083ac4525362740489d7086332367db8379\nSHA256: f05b4bf5c6374a3c57d62eb000f5327a751962286b81a3bbb19fba4ff92c1072\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.5.4"
+    "package": "Package: flood\nVersion: 4.6.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.6.0/flood-linux-arm64.deb\nSize: 17612952\nMD5sum: 26106d101fe7ceab9f43e88c1b3d204d\nSHA1: 677b98aaab83a67ff042a69d95836da618ceaeb1\nSHA256: fb6ff3214181c78d34383bbfdcd8e7309d2b99a2d0f5e4db0beef4472add43c6\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.6.0"
   },
   {
     "arch": "amd64",
@@ -74,8 +68,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.5.3-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.3/flood-linux-arm64.deb\nSize: 14822678\nMD5sum: f4bc37081b88568d63e68b2700a3e039\nSHA1: d0b2127190a83b6d5de3b6c6b40a86e85ce219fb\nSHA256: a9e933f78ca1ff7232954b7ae287f8b7a937b7c4704277e6f02abf98f5613073\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.5.3"
+    "package": "Package: flood\nVersion: 4.5.4-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.4/flood-linux-arm64.deb\nSize: 14827584\nMD5sum: 7cfdcf14a2ee1058bdeae7f2eccbbbd1\nSHA1: ccc5a083ac4525362740489d7086332367db8379\nSHA256: f05b4bf5c6374a3c57d62eb000f5327a751962286b81a3bbb19fba4ff92c1072\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.5.4"
   },
   {
     "arch": "amd64",
@@ -86,8 +80,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.5.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.2/flood-linux-arm64.deb\nSize: 14815850\nMD5sum: 18559cd29cdad1993acc1d580ae996f2\nSHA1: 80d424fdcab9005d504622fb9d7c689aac70cab5\nSHA256: a7d8c54f1568fc7dcc77f4bcf5fe2ba899499738070f2b342d91aa0114e66b40\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.5.2"
+    "package": "Package: flood\nVersion: 4.5.3-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.3/flood-linux-arm64.deb\nSize: 14822678\nMD5sum: f4bc37081b88568d63e68b2700a3e039\nSHA1: d0b2127190a83b6d5de3b6c6b40a86e85ce219fb\nSHA256: a9e933f78ca1ff7232954b7ae287f8b7a937b7c4704277e6f02abf98f5613073\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.5.3"
   },
   {
     "arch": "amd64",
@@ -98,8 +92,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.5.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.1/flood-linux-arm64.deb\nSize: 14810260\nMD5sum: c7fc8738da7b74d7dac10b982a2c50c1\nSHA1: 6ab93ec0f1e1d9bbd0f4d53dd52d5b4f9b34047a\nSHA256: 8113ae43cd944778277d372adcd58f33e31892407112bc4d56cb3b4826aa59d1\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.5.1"
+    "package": "Package: flood\nVersion: 4.5.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.2/flood-linux-arm64.deb\nSize: 14815850\nMD5sum: 18559cd29cdad1993acc1d580ae996f2\nSHA1: 80d424fdcab9005d504622fb9d7c689aac70cab5\nSHA256: a7d8c54f1568fc7dcc77f4bcf5fe2ba899499738070f2b342d91aa0114e66b40\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.5.2"
   },
   {
     "arch": "amd64",
@@ -110,8 +104,8 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.5.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.0/flood-linux-arm64.deb\nSize: 14821362\nMD5sum: cec0dd070f3b180369385aade769e6cd\nSHA1: ea8d8fb78412589c804bd1e58c97344c33d462f0\nSHA256: ee16df1371a5b506c530195245bc8c3fb476e8241739c30e07fea3712936778c\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.5.0"
+    "package": "Package: flood\nVersion: 4.5.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.1/flood-linux-arm64.deb\nSize: 14810260\nMD5sum: c7fc8738da7b74d7dac10b982a2c50c1\nSHA1: 6ab93ec0f1e1d9bbd0f4d53dd52d5b4f9b34047a\nSHA256: 8113ae43cd944778277d372adcd58f33e31892407112bc4d56cb3b4826aa59d1\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.5.1"
   },
   {
     "arch": "amd64",
@@ -122,13 +116,19 @@
   {
     "arch": "arm64",
     "filename": "flood-linux-arm64.deb",
-    "package": "Package: flood\nVersion: 4.4.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.4.1/flood-linux-arm64.deb\nSize: 14787116\nMD5sum: abf5991e07772675dc1c4251ba746f07\nSHA1: 936232f29b5fd316ed877075ca02e91d8fab8351\nSHA256: ff6cef09a4c818b1e40ba6218e7b6d7634d3a94412d3c3001a5c485137dcbc30\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
-    "tag": "v4.4.1"
+    "package": "Package: flood\nVersion: 4.5.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.5.0/flood-linux-arm64.deb\nSize: 14821362\nMD5sum: cec0dd070f3b180369385aade769e6cd\nSHA1: ea8d8fb78412589c804bd1e58c97344c33d462f0\nSHA256: ee16df1371a5b506c530195245bc8c3fb476e8241739c30e07fea3712936778c\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.5.0"
   },
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.4.1-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.4.1/flood-linux-x64.deb\nSize: 15474970\nMD5sum: b90bfadf0c89bd966e8eb3b0d9ddaaec\nSHA1: 439f2c122f3c252ea49b51dd5477aa545fdbe880\nSHA256: 4bca6c8fca8f3548a88c3be88c885ab66edbb75d5282b8ba4052fe34075722c7\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "tag": "v4.4.1"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.4.1-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.4.1/flood-linux-arm64.deb\nSize: 14787116\nMD5sum: abf5991e07772675dc1c4251ba746f07\nSHA1: 936232f29b5fd316ed877075ca02e91d8fab8351\nSHA256: ff6cef09a4c818b1e40ba6218e7b6d7634d3a94412d3c3001a5c485137dcbc30\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "tag": "v4.4.1"
   }
 ]
