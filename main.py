@@ -115,6 +115,7 @@ try:
                 .json()
             ),
         ):
+            print("processing", tag.tag_name)
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
@@ -126,6 +127,7 @@ try:
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
                 local_name = local_dir.joinpath(asset.name)
+                print("processing", tag.tag_name, asset.name)
                 deb = client.get(asset.browser_download_url, follow_redirects=True)
                 local_name.write_bytes(deb.content)
                 if IS_CI:
