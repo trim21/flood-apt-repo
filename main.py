@@ -78,8 +78,12 @@ release_dir.mkdir(exist_ok=True, parents=True)
 cache_file_path = config.output_dir.joinpath("hash-cache.json")
 
 package_cache = {}
-with contextlib.suppress(FileNotFoundError):
+try:
     package_cache = json.loads(cache_file_path.read_bytes())
+except json.JSONDecodeError:
+    cache_file_path.unlink(missing_ok=True)
+except FileNotFoundError:
+    pass
 
 try:
     for repo in config.repositories:
