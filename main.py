@@ -102,7 +102,7 @@ try:
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
-                cache_key = "{}-{}".format(tag.tag_name, asset.name)
+                cache_key = "{}/{}".format(tag.tag_name, asset.name)
                 if cache_key in package_cache:
                     continue
                 local_dir = pool_root.joinpath(repo, tag.tag_name)

@@ -24,10 +24,11 @@ jobs:
         with:
           python-version: "3.x"
           cache: pip
+
       - run: pip install -r requirements.txt
 
       - run: |
-          git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git dist
+          git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --branch gh-pages --depth=1 dist
 
       - name: Generate package index
         run: python main.py
@@ -39,7 +40,6 @@ jobs:
         working-directory: dist
         run: |
           CINFO="$(git log -1 --pretty="[%h] %an: %s")"
-          git init --quiet
           touch .nojekyll
           git add --all
           git -c user.name=GitHub -c user.email=noreply@github.com commit \

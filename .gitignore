@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+dist/
 # Generated files
 /cache/
 output/dists
