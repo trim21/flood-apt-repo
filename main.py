@@ -189,9 +189,6 @@ def main():
             print("package changes")
             cache_file_path.write_text(new_packages)
 
-    if not changed:
-        return
-
     for release in package_cache:
         top_dir = release_dir.joinpath(
             config.component, "binary-{}".format(release.arch)
@@ -199,6 +196,9 @@ def main():
         top_dir.mkdir(exist_ok=True, parents=True)
         with top_dir.joinpath("Packages").open("a+") as f:
             f.write(release.package)
+
+    if not changed:
+        return
 
     # Generate the "Release" file
     if IS_CI:
