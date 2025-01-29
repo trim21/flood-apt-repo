@@ -1,23 +1,23 @@
 Architectures: all amd64 arm64 armhf i386
 Codename: devel
 Components: main
-Date: Wed, 29 Jan 2025 16:20:26 +0000
+Date: Wed, 29 Jan 2025 16:22:11 +0000
 Label: jesec
 Origin: deb-github.ibugone.com
 Suite: stable
 MD5Sum:
- 066d5ee237a4add1c6b75d00ddeafbea              171 Release
+ 519a42e08fda93a3ce2a7697d9ce0a2d              171 Release
  1bfbcd41b93228de16e69ee4ad33c278             4500 main/binary-amd64/Packages
  96ae396b9daedf5bd7f61d87a12eca75             4518 main/binary-arm64/Packages
 SHA1:
- ef16c79e09d0a7b898caf7da88c42d1c9ac1bf7d              171 Release
+ 2204da25b4b922b16c5aa65c27e7ac1271309a63              171 Release
  73434af11a8a3fc8d74560bbed32196c26f1ae63             4500 main/binary-amd64/Packages
  23c1f8f776f635e80be756289eb5c6f881bacfb5             4518 main/binary-arm64/Packages
 SHA256:
- 927f8ebf4a3cadba6a00d7b2c7a6ec81ad4a33d07ad40f4937785ffcc2ba30cf              171 Release
+ 7dcf7ebdeed4848963393002fa753c8e58c85e369da707f5fcaa5c2762592de0              171 Release
  78d5ac2d556c1e4dcd750bb098dd2757615721184188de36e1c0448d880a6597             4500 main/binary-amd64/Packages
  2a9c4dd7f64523d3ecf435cfb348e9f7821bea9a53bca1547db1213f5ede0d18             4518 main/binary-arm64/Packages
 SHA512:
- f2d3fe13848e61d87418ea4d482311100d9918ffcac26b1b9e6ebfc771c64dab2ecccb3798903409a6a35ffe9b8cb4b97739f221b427609c36fa9dfc91d62bee              171 Release
+ 38ef33a632f54aca889f8e8b14998de7b7e49a5bd517d329ce9689ffe19bb4c92724dd1d11dc27e8246adaf8342655973f1daf132eb3646e55c8daf166332808              171 Release
  e0fbb76f74515d6cff206e74e6676e4f2b55bc9df804f185bdce04ecd9bf45b6c6068414cae102df6c1d4657122d8b67a78ec81f339573f67413daa0753b9b78             4500 main/binary-amd64/Packages
  98be50af61a41efe390a1f1939b9e414bee0c2bd96b84f4134493461a3b404cbfbf17bbcfe7e8e2d4e6b2353be758b69e798b0cebb5e3d522be118a207ed58c2             4518 main/binary-arm64/Packages
