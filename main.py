@@ -21,7 +21,7 @@ if "PAT" in os.environ:
 client = httpx.Client(headers=headers)
 
 
-arch_pattern = re.compile(r"Architecture: (\S+)\n")
+arch_pattern = re.compile("Architecture: (\\S+)\n")
 
 
 _T = TypeVar("_T")
