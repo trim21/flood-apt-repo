@@ -111,7 +111,7 @@ try:
                         cwd=config.output_dir,
                     )
                     package_cache[asset.name] = package
-                local_name.unlink()
+                    local_name.unlink()
 finally:
     cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
 
