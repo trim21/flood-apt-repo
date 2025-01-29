@@ -5,7 +5,7 @@ on:
     branches: [master]
   workflow_dispatch: {}
   schedule:
-    - cron: '30 23 * * *'
+    - cron: "30 23 * * *"
 
 permissions:
   contents: write
@@ -14,23 +14,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Generate package index
-      env:
-        PAT: ${{ secrets.PAT }}
-      run: python3 main.py
-    - name: Deploy to GitHub Pages
-      if: "${{ github.ref == 'refs/heads/master' }}"
-      run: |
-        CINFO="$(git log -1 --pretty="[%h] %an: %s")"
-        cd output
-        git init --quiet
-        : > .nojekyll
-        git remote add origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git
-        git fetch --depth=1 origin gh-pages
-        git reset --soft FETCH_HEAD
-        git add --all
-        git -c user.name=GitHub -c user.email=noreply@github.com commit \
-          -m "Auto deploy from GitHub Actions build ${GITHUB_RUN_NUMBER}" \
-          -m "$CINFO"
-        git push origin +HEAD:gh-pages
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - run: |
+          git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git dist
+
+      - name: Generate package index
+        run: python main.py
+        env:
+          PAT: ${{ secrets.PAT }}
+
+      - name: Deploy to GitHub Pages
+        if: "${{ github.ref == 'refs/heads/master' }}"
+        working-directory: dist
+        run: |
+          CINFO="$(git log -1 --pretty="[%h] %an: %s")"
+          git init --quiet
+          touch .nojekyll
+          git add --all
+          git -c user.name=GitHub -c user.email=noreply@github.com commit \
+            -m "Auto deploy from GitHub Actions build ${GITHUB_RUN_NUMBER}" \
+            -m "$CINFO"
+          git push origin +HEAD:gh-pages
