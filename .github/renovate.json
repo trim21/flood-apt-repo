@@ -8,5 +8,9 @@
   },
   "pip-compile": {
     "enabled": false
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "rebaseStalePrs": true
   }
 }
