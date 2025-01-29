@@ -1,4 +1,5 @@
 import functools
+from operator import attrgetter
 import re
 import json
 import os
@@ -45,7 +46,7 @@ class Config:
     output_dir: Path
     suite: str
     component: str
-    architectures: list[str]
+    # architectures: list[str]
     repositories: list[str]
 
 
@@ -141,11 +142,20 @@ try:
 
                     local_name.unlink()
 finally:
+    package_cache.sort(key=attrgetter("tag", "arch"))
     cache_file_path.write_text(
         json.dumps(
             [dataclasses.asdict(c) for c in package_cache], ensure_ascii=False, indent=2
         )
     )
+
+for release in package_cache:
+    print(release.filename)
+    top_dir = release_dir.joinpath(release.arch)
+    top_dir.mkdir(exist_ok=True, parents=True)
+    with top_dir.joinpath("Packages").open("a+") as f:
+        f.write(release.package)
+
 
 # packages_file = open(os.path.join(release_dir, "Packages"), "w")
 # for repo in config.repositories:
