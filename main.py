@@ -1,4 +1,5 @@
 import contextlib
+from datetime import datetime
 import functools
 from operator import itemgetter
 import re
@@ -63,6 +64,7 @@ class Asset:
 class Release:
     tag_name: str
     assets: list[Asset]
+    published_at: datetime
 
 
 config = parse_obj_as(
@@ -93,6 +95,7 @@ def copy_public_files():
 class Cache:
     tag: str
     filename: str
+    published_at: datetime
     arch: str
     package: str
 
@@ -176,12 +179,13 @@ def main():
                                 filename=asset.name,
                                 arch=arch,
                                 package=pkg,
+                                published_at=tag.published_at,
                             )
                         )
 
                         local_name.unlink()
     finally:
-        package_cache.sort(key=lambda c: (c.tag, c.filename), reverse=True)
+        package_cache.sort(key=lambda c: (c.published_at, c.filename), reverse=True)
         new_packages = json.dumps(
             [dataclasses.asdict(c) for c in package_cache],
             ensure_ascii=False,
