@@ -77,8 +77,6 @@ release_dir.mkdir(parents=True)
 pool_root.mkdir(exist_ok=True, parents=True)
 
 
-cache_file_path = config.output_dir.joinpath("hash-cache.json")
-
 root = Path(__file__).parent
 config.output_dir.joinpath("_redirects").write_bytes(
     root.joinpath("_redirects").read_bytes()
@@ -94,6 +92,7 @@ class Cache:
 
 
 package_cache: list[Cache] = []
+cache_file_path = config.output_dir.joinpath("package-cache.json")
 try:
     package_cache = parse_obj_as(list[Cache], json.loads(cache_file_path.read_bytes()))
 except (json.JSONDecodeError, pydantic.ValidationError):
