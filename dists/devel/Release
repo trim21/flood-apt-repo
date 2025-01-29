@@ -1,0 +1,23 @@
+Architectures: all amd64 arm64 armhf i386
+Codename: devel
+Components: main
+Date: Wed, 29 Jan 2025 16:11:40 +0000
+Label: jesec
+Origin: deb-github.ibugone.com
+Suite: stable
+MD5Sum:
+ 7c76a21d98c7e20fb58b6056c802e94d              171 Release
+ 1bfbcd41b93228de16e69ee4ad33c278             4500 amd64/Packages
+ 96ae396b9daedf5bd7f61d87a12eca75             4518 arm64/Packages
+SHA1:
+ 609685165a979f882390ce102d7b947348108383              171 Release
+ 73434af11a8a3fc8d74560bbed32196c26f1ae63             4500 amd64/Packages
+ 23c1f8f776f635e80be756289eb5c6f881bacfb5             4518 arm64/Packages
+SHA256:
+ 8c37a0c1e8f768049eff4a3eb920109470a7c4132cd8c3013e5d9eb1b0171c25              171 Release
+ 78d5ac2d556c1e4dcd750bb098dd2757615721184188de36e1c0448d880a6597             4500 amd64/Packages
+ 2a9c4dd7f64523d3ecf435cfb348e9f7821bea9a53bca1547db1213f5ede0d18             4518 arm64/Packages
+SHA512:
+ ef1c39903540806ea34c2fa41ff1064abfdecc952a95843313bc77cb877cd89f1493260fb2942449324c30214414bd8bc0ba4d4fd51a1bb5d493b929227a21dc              171 Release
+ e0fbb76f74515d6cff206e74e6676e4f2b55bc9df804f185bdce04ecd9bf45b6c6068414cae102df6c1d4657122d8b67a78ec81f339573f67413daa0753b9b78             4500 amd64/Packages
+ 98be50af61a41efe390a1f1939b9e414bee0c2bd96b84f4134493461a3b404cbfbf17bbcfe7e8e2d4e6b2353be758b69e798b0cebb5e3d522be118a207ed58c2             4518 arm64/Packages
