@@ -20,17 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v5
 
-      - run: uv export --output-file=requirements.txt
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-          cache: pip
-
-      - run: pip install --no-deps -r requirements.txt
+      - run: uv sync --system
 
       - run: |
           git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --branch gh-pages --depth=1 dist
