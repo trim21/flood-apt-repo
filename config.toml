@@ -1,4 +1,4 @@
 output_dir = "dist"
-suite = "stable"
+suite = "devel"
 component = "main"
 repositories = ["jesec/flood"]
