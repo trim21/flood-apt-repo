@@ -36,7 +36,7 @@ packages_file = open(os.path.join(release_dir, "Packages"), "w")
 for repo in repositories:
     print(f"{repo}:", file=sys.stderr)
     try:
-        latest = requests.get(f"https://api.github.com/repos/{repo}/releases/v4.8.2", headers=headers).json()
+        latest = requests.get(f"https://api.github.com/repos/{repo}/releases/tags/v4.8.2", headers=headers).json()
         tag_name = latest["tag_name"]
         for asset in latest["assets"]:
             if not asset["name"].endswith(".deb"):
