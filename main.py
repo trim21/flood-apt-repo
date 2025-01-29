@@ -184,7 +184,7 @@ def main():
         )
         changed = True
         if cache_file_path.exists():
-            changed = new_packages == cache_file_path.read_text(encoding="utf-8")
+            changed = new_packages != cache_file_path.read_text(encoding="utf-8")
         if changed:
             print("package changes")
             cache_file_path.write_text(new_packages)
