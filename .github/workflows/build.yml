@@ -40,6 +40,12 @@ jobs:
       - name: Deploy to GitHub Pages
         working-directory: dist
         run: |
-          CINFO="$(date)"
+          if test -z "$(git status --porcelain)" ; then
+            exit 0
+          fi
+
           git add .
-          test -z "$(git status --porcelain)" || (git -c user.name=GitHub -c user.email=noreply@github.com commit -m "Auto deploy from GitHub Actions build $(date --iso-8601=seconds)" && git push origin +HEAD:gh-pages)
+
+          git -c user.name=GitHub -c user.email=noreply@github.com commit -m "Auto deploy from GitHub Actions build $(date --iso-8601=seconds)"
+
+          git push origin +HEAD:gh-pages
