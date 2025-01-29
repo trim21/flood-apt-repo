@@ -1,21 +1,21 @@
 Architectures: amd64 arm64
 Components: main
-Date: Wed, 29 Jan 2025 20:44:29 +0000
+Date: Wed, 29 Jan 2025 20:45:04 +0000
 Label: jesec
 Suite: devel
 MD5Sum:
- 9dd868787514babf53de2ac6694a0513              108 Release
+ a0694ec2070aa5099f04f9c0d4e97a3f              108 Release
  d3b33c2b237a4cf4eaa0ceeaad4cac73            23820 main/binary-amd64/Packages
  9124f85277740c136b1942659e6a5767            23864 main/binary-arm64/Packages
 SHA1:
- d7c833ffc545e5abad0ecf6c7f3d5e607cd24ee5              108 Release
+ 572a0294a77110a9a991d2b354de46d8dc9b33c7              108 Release
  31818b81f7792d52c8463d932c2929230022ce64            23820 main/binary-amd64/Packages
  cdc3815cbf1a82e38cccd0162fe6d02db9794c74            23864 main/binary-arm64/Packages
 SHA256:
- 2c832392491f11e72c358c976c923a668c92bb4018bb07d1028cba77dc50aadc              108 Release
+ 34c137c375556aacebb3e2176e0485ffad56c3b1d07ca1fdb5fc68cab7d4916b              108 Release
  3b0ad074b07cde3b550e69b3aaf6ee640fd7da6fe42ce560b563434b370b9e83            23820 main/binary-amd64/Packages
  2840c14e67e077ea7dd3a2f79d2ecfc0c854d63abbd7f402b9e5e7ff905c0212            23864 main/binary-arm64/Packages
 SHA512:
- f737947d9f3224b414bc468c78c99d404e587cbc2d54d0400a9397ff56129b8115fd38f1e3c9002182c78123cce3cfef60af4c360afe9c637e3767b75cc2d6d1              108 Release
+ 89c73fef8a8669d6c7b5a15cec89c94e0ab3df5e7126620b558c1507f6ddaaee4c9bd037f6d4e392390705657677a335fe776d607d005e98473ea67e3e0cc918              108 Release
  8397a4eebd6ee3f50496e09b7372ba4e89cf28d638b2dc4b2304e0bc7dd678031770fd8e1ab59e6798956b38af83781ba6811a3020afa1e23b89dd802084138a            23820 main/binary-amd64/Packages
  4718291dcf25cbe9685e703038ec9cae715d8e92f25a4c2e2776b73529518dba7dee4d095c80564c4f458169966023d350c3c052aee65bec15dca672781a897a            23864 main/binary-arm64/Packages
