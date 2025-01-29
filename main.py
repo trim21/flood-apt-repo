@@ -61,7 +61,10 @@ for repo in repositories:
             subprocess.run(["dpkg-scanpackages", "--multiversion", "."],
                 stdin=subprocess.DEVNULL, stdout=packages_file,
                 cwd=output_dir, check=True)
-            shutil.rmtree(pool_root)
+            try:
+                shutil.rmtree(pool_root)
+            except FileNotFoundError:
+                pass
     except Exception as e:
         traceback.print_exc()
 
