@@ -1,5 +1,4 @@
 import functools
-from operator import attrgetter
 import re
 import json
 import os
@@ -8,6 +7,7 @@ import subprocess
 import tomllib
 from typing import Any, TypeVar
 
+import semver
 import httpx
 import dataclasses
 from pydantic import TypeAdapter
@@ -142,7 +142,7 @@ try:
 
                     local_name.unlink()
 finally:
-    package_cache.sort(key=attrgetter("tag", "arch"))
+    package_cache.sort(key=lambda c: (semver.Version.parse(c.tag), c.arch))
     cache_file_path.write_text(
         json.dumps(
             [dataclasses.asdict(c) for c in package_cache], ensure_ascii=False, indent=2
