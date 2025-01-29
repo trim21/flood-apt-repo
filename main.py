@@ -93,13 +93,10 @@ class Cache:
 
 
 def main():
-
     pool_root = config.output_dir.joinpath("pool", config.component)
     release_dir = config.output_dir.joinpath("dists", config.suite)
 
-    with contextlib.suppress(FileNotFoundError):
-        shutil.rmtree(release_dir)
-    release_dir.mkdir(parents=True)
+    release_dir.mkdir(parents=True, exist_ok=True)
     pool_root.mkdir(exist_ok=True, parents=True)
 
     package_cache: list[Cache] = []
@@ -198,7 +195,7 @@ def main():
             f.write(release.package)
 
     # Generate the "Release" file
-    if IS_CI:
+    if IS_CI and changed:
         with release_dir.joinpath("Release").open("wb") as f:
             subprocess.run(
                 [
