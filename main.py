@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 
-import bz2
 import contextlib
-import gzip
-import io
 import os
 import requests
 import shutil
@@ -36,7 +33,9 @@ packages_file = open(os.path.join(release_dir, "Packages"), "w")
 for repo in repositories:
     print(f"{repo}:", file=sys.stderr)
     try:
-        latest = requests.get(f"https://api.github.com/repos/{repo}/releases/tags/v4.8.2", headers=headers).json()
+        latest = requests.get(
+            f"https://api.github.com/repos/{repo}/releases/latest", headers=headers
+        ).json()
         tag_name = latest["tag_name"]
         for asset in latest["assets"]:
             if not asset["name"].endswith(".deb"):
@@ -59,18 +58,26 @@ for repo in repositories:
                     f.write(chunk)
         # In CI with limited disk space, process repositories one by one
         if "CI" in os.environ:
-            subprocess.run(["dpkg-scanpackages", "--multiversion", "."],
-                stdin=subprocess.DEVNULL, stdout=packages_file,
-                cwd=output_dir, check=True)
+            subprocess.run(
+                ["dpkg-scanpackages", "--multiversion", "."],
+                stdin=subprocess.DEVNULL,
+                stdout=packages_file,
+                cwd=output_dir,
+                check=True,
+            )
             with contextlib.suppress(FileNotFoundError):
                 shutil.rmtree(pool_root)
     except Exception:
         traceback.print_exc()
 
 if "CI" not in os.environ:
-    subprocess.run(["dpkg-scanpackages", "--multiversion", "."],
-        stdin=subprocess.DEVNULL, stdout=packages_file,
-        cwd=output_dir, check=True)
+    subprocess.run(
+        ["dpkg-scanpackages", "--multiversion", "."],
+        stdin=subprocess.DEVNULL,
+        stdout=packages_file,
+        cwd=output_dir,
+        check=True,
+    )
 packages_file.close()
 
 # Split the "Packages" file by architecture
@@ -98,12 +105,13 @@ try:
 finally:
     for f in packages.values():
         f.close()
-        with open(f.name, "rb") as fin, bz2.open(f.name + ".bz2", "wb") as fout:
-            shutil.copyfileobj(fin, fout)
-        with open(f.name, "rb") as fin, gzip.open(f.name + ".gz", "wb") as fout:
-            shutil.copyfileobj(fin, fout)
 
 
 # Generate the "Release" file
 with open(os.path.join(release_dir, "Release"), "wb") as f:
-    subprocess.run(["apt-ftparchive", "-c", f"{suite}.conf", "release", release_dir], stdin=subprocess.DEVNULL, stdout=f, check=True)
+    subprocess.run(
+        ["apt-ftparchive", "-c", f"{suite}.conf", "release", release_dir],
+        stdin=subprocess.DEVNULL,
+        stdout=f,
+        check=True,
+    )
