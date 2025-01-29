@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "deb [trusted=yes] https://flood-apt-repo.pages.dev/ devel main" | sudo tee /etc/apt/sources.list.d/jesec.list
+          echo "deb [trusted=yes] https://flood-apt-repo.pages.dev/ devel main" | sudo tee /etc/apt/sources.list.d/flood.list
 
       - run: sudo apt-get update -y
       - run: sudo apt-get install flood -y
