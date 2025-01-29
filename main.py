@@ -79,8 +79,8 @@ def copy_public_files():
         for file in files:
             out_file = Path(dir, file)
             src_file = config.output_dir.joinpath(out_file.relative_to(public))
-            print("copy", src_file, "to", out_file)
-            src_file.write_bytes(out_file.read_bytes())
+            print("copy", src_file.relative_to(root), "to", out_file)
+            out_file.write_bytes(src_file.read_bytes())
 
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
