@@ -43,5 +43,5 @@ jobs:
           CINFO="$(date)"
           git add --all
           git -c user.name=GitHub -c user.email=noreply@github.com commit \
-            -m "Auto deploy from GitHub Actions build $(date)"
+            -m "Auto deploy from GitHub Actions build $(date --iso-8601=seconds)"
           git push origin +HEAD:gh-pages
