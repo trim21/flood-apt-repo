@@ -43,34 +43,6 @@ Priority: optional
 Homepage: https://github.com/jesec/flood
 Description: modern web user interface for various torrent clients
 
-Package: rtorrent
-Version: 0.9.8-jc-r16
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r16/rtorrent-linux-amd64.deb
-Size: 2176364
-MD5sum: 851ac112124c60aca90738fa99643d77
-SHA1: 18cc42f57cee7a170e32451137e28c64aa4246f7
-SHA256: 880dafaa37e57d86e0898a1e03ca5050471a768c684cb2267708ef0487377e89
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r15
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-amd64.deb
-Size: 2184722
-MD5sum: 32a56e85ec554c954ddbe0bed453f5bd
-SHA1: c151a07a8fa4d650155f466bec544fc1c9704d02
-SHA256: 106e3969dd8583994a899ea104b0828bb887caab0e6cda872c624d228a62aa7a
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
 Package: flood
 Version: 4.6.1-0
 Architecture: amd64
@@ -100,6 +72,124 @@ Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/flood
 Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.5.4-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.5.4/flood-linux-x64.deb
+Size: 15519364
+MD5sum: d8e1dafd8e27cd50e656d4d7f8d0b1ff
+SHA1: 4f59b2dcaa4c94ef0b848cde041317348c03f53e
+SHA256: cb76a771a322ce90028c0a071a451ca6ddd0441f690edfa31ddd1a1dde8f9eb1
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.5.3-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.5.3/flood-linux-x64.deb
+Size: 15514934
+MD5sum: c79f624d2f6baecacec028f56443bed2
+SHA1: 843a4836482f539e7c63b2d343842e445a6528be
+SHA256: 92c6c61c52ab31f9d04391f5c8ffc3dd783ff47259077938a12f126df158fea2
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.5.2-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.5.2/flood-linux-x64.deb
+Size: 15504646
+MD5sum: 4bfa8d6f247feae3a30595140e06e5c8
+SHA1: e6a8156d68227426295e9b783ea768031f8be6b5
+SHA256: 3e52152c2852b3c89038a3804e65744658eb05d7d664bd17912e5fb9d56a54f3
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.5.1-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.5.1/flood-linux-x64.deb
+Size: 15499902
+MD5sum: 49385b55e5d9eeb9073678775fec850e
+SHA1: d27fbc48cbb1f447f4ffa3e4c3cbb960ea9f3628
+SHA256: 7e37a7b453285da7036588000712f27a7b64cbac503f1cc02b4629737446bfce
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.5.0-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.5.0/flood-linux-x64.deb
+Size: 15514774
+MD5sum: b516696e86748a388ce989f1c6514959
+SHA1: b238948ca55f2b825673344f9f7f599a2057426d
+SHA256: 88b20ca5242e346634fdd4c431ca76d7d852f78a5bf0f083a95a2af58e8effd2
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: flood
+Version: 4.4.1-0
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.4.1/flood-linux-x64.deb
+Size: 15474970
+MD5sum: b90bfadf0c89bd966e8eb3b0d9ddaaec
+SHA1: 439f2c122f3c252ea49b51dd5477aa545fdbe880
+SHA256: 4bca6c8fca8f3548a88c3be88c885ab66edbb75d5282b8ba4052fe34075722c7
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
+Package: rtorrent
+Version: 0.9.8-jc-r16
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r16/rtorrent-linux-amd64.deb
+Size: 2176364
+MD5sum: 851ac112124c60aca90738fa99643d77
+SHA1: 18cc42f57cee7a170e32451137e28c64aa4246f7
+SHA256: 880dafaa37e57d86e0898a1e03ca5050471a768c684cb2267708ef0487377e89
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r15
+Architecture: amd64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-amd64.deb
+Size: 2184722
+MD5sum: 32a56e85ec554c954ddbe0bed453f5bd
+SHA1: c151a07a8fa4d650155f466bec544fc1c9704d02
+SHA256: 106e3969dd8583994a899ea104b0828bb887caab0e6cda872c624d228a62aa7a
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
 
 Package: rtorrent
 Version: 0.9.8-jc-r14
@@ -157,21 +247,6 @@ Priority: optional
 Homepage: https://github.com/jesec/rtorrent
 Description: a stable and high-performance BitTorrent client
 
-Package: flood
-Version: 4.5.4-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.4/flood-linux-x64.deb
-Size: 15519364
-MD5sum: d8e1dafd8e27cd50e656d4d7f8d0b1ff
-SHA1: 4f59b2dcaa4c94ef0b848cde041317348c03f53e
-SHA256: cb76a771a322ce90028c0a071a451ca6ddd0441f690edfa31ddd1a1dde8f9eb1
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
 Package: rtorrent
 Version: 0.9.8-jc-r10
 Architecture: amd64
@@ -186,21 +261,6 @@ Priority: optional
 Homepage: https://github.com/jesec/rtorrent
 Description: a stable and high-performance BitTorrent client
 
-Package: flood
-Version: 4.5.3-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.3/flood-linux-x64.deb
-Size: 15514934
-MD5sum: c79f624d2f6baecacec028f56443bed2
-SHA1: 843a4836482f539e7c63b2d343842e445a6528be
-SHA256: 92c6c61c52ab31f9d04391f5c8ffc3dd783ff47259077938a12f126df158fea2
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
 Package: rtorrent
 Version: 0.9.8-jc-r9
 Architecture: amd64
@@ -214,51 +274,6 @@ Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/rtorrent
 Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.5.2-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.2/flood-linux-x64.deb
-Size: 15504646
-MD5sum: 4bfa8d6f247feae3a30595140e06e5c8
-SHA1: e6a8156d68227426295e9b783ea768031f8be6b5
-SHA256: 3e52152c2852b3c89038a3804e65744658eb05d7d664bd17912e5fb9d56a54f3
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.5.1-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.1/flood-linux-x64.deb
-Size: 15499902
-MD5sum: 49385b55e5d9eeb9073678775fec850e
-SHA1: d27fbc48cbb1f447f4ffa3e4c3cbb960ea9f3628
-SHA256: 7e37a7b453285da7036588000712f27a7b64cbac503f1cc02b4629737446bfce
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.5.0-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.0/flood-linux-x64.deb
-Size: 15514774
-MD5sum: b516696e86748a388ce989f1c6514959
-SHA1: b238948ca55f2b825673344f9f7f599a2057426d
-SHA256: 88b20ca5242e346634fdd4c431ca76d7d852f78a5bf0f083a95a2af58e8effd2
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
 
 Package: rtorrent
 Version: 0.9.8-jc-r8
@@ -315,368 +330,6 @@ Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/rtorrent
 Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.4.1-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.4.1/flood-linux-x64.deb
-Size: 15474970
-MD5sum: b90bfadf0c89bd966e8eb3b0d9ddaaec
-SHA1: 439f2c122f3c252ea49b51dd5477aa545fdbe880
-SHA256: 4bca6c8fca8f3548a88c3be88c885ab66edbb75d5282b8ba4052fe34075722c7
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r4
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r4/rtorrent-linux-amd64.deb
-Size: 2063952
-MD5sum: 425d9a75a40bf29c254241bf4f8dc7c2
-SHA1: 2087520e4c1bff51dc8ef8c6e490060fba3bbfbf
-SHA256: 201a86c5bb84b3a2f2b654ef198889dd35269ae3912e50205c760d710d77c8a6
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.9.3-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.9.3/flood-linux-x64.deb
-Size: 27714958
-MD5sum: d687605027a161962370b06433ea7597
-SHA1: 45a102b97d50851a6511182205d593d9af0132a9
-SHA256: 3fa3826a15a765f97756bc6a026be5423cdf0b9cdc7c91207cce4904a6c6ab39
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.9.2-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.9.2/flood-linux-x64.deb
-Size: 27763104
-MD5sum: 3ff88e103f7c3d6fb55d62a0203d589a
-SHA1: 55ca79f8243f105a35d2b5343e359639b6e2db36
-SHA256: 4c71dde0e8f7ea30ec68cfe7b0f6554295b62e171653c7db53bc603df9b3804b
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.8.2-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.8.2/flood-linux-x64.deb
-Size: 26214022
-MD5sum: 1b0603836f27714047e373f7d85fc66d
-SHA1: 1c0060e7fb7e0641df847b85b5f471b92fc62fbf
-SHA256: 7d161781c7e2b0a91a58d98ef5b22b2991f710959d2390a888dda5da41a83515
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r16
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r16/rtorrent-linux-amd64.deb
-Size: 2176364
-MD5sum: 851ac112124c60aca90738fa99643d77
-SHA1: 18cc42f57cee7a170e32451137e28c64aa4246f7
-SHA256: 880dafaa37e57d86e0898a1e03ca5050471a768c684cb2267708ef0487377e89
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r15
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-amd64.deb
-Size: 2184722
-MD5sum: 32a56e85ec554c954ddbe0bed453f5bd
-SHA1: c151a07a8fa4d650155f466bec544fc1c9704d02
-SHA256: 106e3969dd8583994a899ea104b0828bb887caab0e6cda872c624d228a62aa7a
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.6.1-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.6.1/flood-linux-x64.deb
-Size: 18572692
-MD5sum: 83decbe977433392979fef18754aae39
-SHA1: 4a04afd3320ef0d3ef491eede56fb4e01a9aea3a
-SHA256: 3ea6794e6b90791a2903327947a282714ee5c348fb7811860668e28405188bde
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.6.0-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.6.0/flood-linux-x64.deb
-Size: 18474882
-MD5sum: f9ce8f7e521210022c79af00a07a14f8
-SHA1: b2b0727cc8b31c19855367340ada4ebc183f0e7d
-SHA256: afe69e0f3e5add230a50ab4cf9fd646c93d8fa961613ba83eea793fe59ca8645
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r14
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r14/rtorrent-linux-amd64.deb
-Size: 2143140
-MD5sum: 959aaa85e9ac55a10ce0498308cb248e
-SHA1: 0585153a0c4a63761999f9fe12ffd29b6180a46e
-SHA256: 2a1f0e4c61c1474e8b56cbe673f47a41642fc6a51eab9177145ace1c327af768
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r13
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r13/rtorrent-linux-amd64.deb
-Size: 2133542
-MD5sum: a6715ccb07371324398bcca61fbc295f
-SHA1: 228b539a15c7cb46a6734364c516b1fe730042ef
-SHA256: 4dc6d94a3163c57bfdc68ef7ed966c470333ed5cc77c34b3f2b8582a245b1751
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r12
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r12/rtorrent-linux-amd64.deb
-Size: 2133460
-MD5sum: 606e21f1e21e831dcdf8213d6a7f3296
-SHA1: a7ea169bc2978a9fd544fd82f0fa8208c75bf930
-SHA256: 175eeb6478ecf57693bec963dfc71b74b65b535c8e92a6219a85290faeb3d34d
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r11
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r11/rtorrent-linux-amd64.deb
-Size: 2130162
-MD5sum: c012ad15d4d56a0c528d0bef80454c64
-SHA1: 717193dafcdc4249c238aefde192db8e7c37711d
-SHA256: e74b5a6a017abf57fe98e788d3c32c48c9af4fc20c783727de5dfcd6f368118e
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.5.4-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.4/flood-linux-x64.deb
-Size: 15519364
-MD5sum: d8e1dafd8e27cd50e656d4d7f8d0b1ff
-SHA1: 4f59b2dcaa4c94ef0b848cde041317348c03f53e
-SHA256: cb76a771a322ce90028c0a071a451ca6ddd0441f690edfa31ddd1a1dde8f9eb1
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r10
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r10/rtorrent-linux-amd64.deb
-Size: 2119788
-MD5sum: 44afbf0af8be27a59245294e0bf23503
-SHA1: 783724228b964d3ba3c58f978327ec74d51a0b12
-SHA256: 9a6f96e664320c540121653f740c566895a70e3042ffba7cbe22549f156e99ae
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.5.3-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.3/flood-linux-x64.deb
-Size: 15514934
-MD5sum: c79f624d2f6baecacec028f56443bed2
-SHA1: 843a4836482f539e7c63b2d343842e445a6528be
-SHA256: 92c6c61c52ab31f9d04391f5c8ffc3dd783ff47259077938a12f126df158fea2
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r9
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r9/rtorrent-linux-amd64.deb
-Size: 2119622
-MD5sum: 45da20efa4d6e64233b5b482a369a5b9
-SHA1: 9ca7ce965471688e1748386f07dcb074de02b425
-SHA256: f1d2d4b2cdac4b0d9a7d05ae30a3438de3094842d46f03a4fa91dd7aef5d8f3f
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.5.2-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.2/flood-linux-x64.deb
-Size: 15504646
-MD5sum: 4bfa8d6f247feae3a30595140e06e5c8
-SHA1: e6a8156d68227426295e9b783ea768031f8be6b5
-SHA256: 3e52152c2852b3c89038a3804e65744658eb05d7d664bd17912e5fb9d56a54f3
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.5.1-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.1/flood-linux-x64.deb
-Size: 15499902
-MD5sum: 49385b55e5d9eeb9073678775fec850e
-SHA1: d27fbc48cbb1f447f4ffa3e4c3cbb960ea9f3628
-SHA256: 7e37a7b453285da7036588000712f27a7b64cbac503f1cc02b4629737446bfce
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: flood
-Version: 4.5.0-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.5.0/flood-linux-x64.deb
-Size: 15514774
-MD5sum: b516696e86748a388ce989f1c6514959
-SHA1: b238948ca55f2b825673344f9f7f599a2057426d
-SHA256: 88b20ca5242e346634fdd4c431ca76d7d852f78a5bf0f083a95a2af58e8effd2
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
-
-Package: rtorrent
-Version: 0.9.8-jc-r8
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r8/rtorrent-linux-amd64.deb
-Size: 2115882
-MD5sum: a469067f6b556e8db1f65f6989cc3f82
-SHA1: cb9d1f0a221cbe8f0a71fc4153c529cbce076189
-SHA256: b3626346c38fc300a9a38bf61b782dee542f6e2652cefce3398e8b330a1a0640
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r7
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r7/rtorrent-linux-amd64.deb
-Size: 2112734
-MD5sum: 402cb3fba6a6249e6a5ba52fe0cdd7f2
-SHA1: 3fc8a655e56c8cdbd626f1af95d95da77899ec38
-SHA256: 75f776251f1a1ddefcba35a51ae232acf5aefbe0b2938ab027a6f6f10025b0db
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r6
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r6/rtorrent-linux-amd64.deb
-Size: 2113030
-MD5sum: 60d3dc2694b2eb5b76138dfe7cf28c20
-SHA1: d7247d6448e37d72f5e48685d2efbdec1e8d55ee
-SHA256: 658fcdaa18db5bfe83bb0cca8dbbe390e159d3cbceb1bfe6526aaa909ecdf10b
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: rtorrent
-Version: 0.9.8-jc-r5
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r5/rtorrent-linux-amd64.deb
-Size: 2113030
-MD5sum: 35493026a5c1dd1602ef8a341ea92584
-SHA1: 93fcbad7a90292f700291fd62ca5878d4b3bfcaa
-SHA256: b932e16706f07ead22eeeef410a487d799bacd8d869c50a7676b570f4a3742a4
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/rtorrent
-Description: a stable and high-performance BitTorrent client
-
-Package: flood
-Version: 4.4.1-0
-Architecture: amd64
-Maintainer: Jesse Chan <jc@linux.com>
-Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.4.1/flood-linux-x64.deb
-Size: 15474970
-MD5sum: b90bfadf0c89bd966e8eb3b0d9ddaaec
-SHA1: 439f2c122f3c252ea49b51dd5477aa545fdbe880
-SHA256: 4bca6c8fca8f3548a88c3be88c885ab66edbb75d5282b8ba4052fe34075722c7
-Section: contrib/devel
-Priority: optional
-Homepage: https://github.com/jesec/flood
-Description: modern web user interface for various torrent clients
 
 Package: rtorrent
 Version: 0.9.8-jc-r4
