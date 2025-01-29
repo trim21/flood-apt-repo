@@ -175,7 +175,7 @@ def main():
     finally:
         # remove leading prefix `v`
         package_cache.sort(
-            key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch), reverse=True
+            key=lambda c: (semver.Version.parse(c.tag[1:]), c.filename), reverse=True
         )
         new_packages = json.dumps(
             [dataclasses.asdict(c) for c in package_cache],
