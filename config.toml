@@ -1,4 +1,4 @@
 output_dir = "dist"
 suite = "devel"
 component = "main"
-repositories = ["jesec/flood"]
+repositories = ["jesec/flood", "jesec/rtorrent"]
