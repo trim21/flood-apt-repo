@@ -2,6 +2,7 @@
 
 import contextlib
 import functools
+import io
 import json
 import os
 from pathlib import Path
@@ -76,9 +77,9 @@ release_dir.mkdir(exist_ok=True, parents=True)
 
 cache_file_path = config.output_dir.joinpath("hash-cache.json")
 
-hash_cache = {}
+package_cache = {}
 with contextlib.suppress(FileNotFoundError):
-    hash_cache = json.loads(cache_file_path.read_bytes())
+    package_cache = json.loads(cache_file_path.read_bytes())
 
 try:
     for repo in config.repositories:
@@ -97,7 +98,7 @@ try:
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
-                if asset.name in hash_cache:
+                if asset.name in package_cache:
                     continue
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
@@ -105,15 +106,17 @@ try:
                 deb = client.get(asset.browser_download_url, follow_redirects=True)
                 local_name.write_bytes(deb.content)
                 if IS_CI:
-                    subprocess.run(
-                        ["dpkg-scanpackages", "--multiversion", "."],
-                        stdin=subprocess.DEVNULL,
-                        # stdout=packages_file,
-                        cwd=config.output_dir,
-                        check=True,
-                    )
+                    with io.BytesIO() as f:
+                        subprocess.run(
+                            ["dpkg-scanpackages", "--multiversion", "."],
+                            stdin=subprocess.DEVNULL,
+                            stdout=f,
+                            cwd=config.output_dir,
+                            check=True,
+                        )
+                        package_cache[asset.name] = f.getvalue()
 finally:
-    cache_file_path.write_text(json.dumps(hash_cache, ensure_ascii=False, indent=2))
+    cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
 
 # packages_file = open(os.path.join(release_dir, "Packages"), "w")
 # for repo in config.repositories:
