@@ -96,6 +96,9 @@ def main():
     pool_root = config.output_dir.joinpath("pool", config.component)
     release_dir = config.output_dir.joinpath("dists", config.suite)
 
+    with contextlib.suppress(FileNotFoundError):
+        shutil.rmtree(release_dir)
+
     release_dir.mkdir(parents=True, exist_ok=True)
     pool_root.mkdir(exist_ok=True, parents=True)
 
