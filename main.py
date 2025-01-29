@@ -197,9 +197,6 @@ def main():
         with top_dir.joinpath("Packages").open("a+") as f:
             f.write(release.package)
 
-    if not changed:
-        return
-
     # Generate the "Release" file
     if IS_CI:
         with release_dir.joinpath("Release").open("wb") as f:
