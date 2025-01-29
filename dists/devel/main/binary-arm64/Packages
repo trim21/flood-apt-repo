@@ -133,3 +133,18 @@ Priority: optional
 Homepage: https://github.com/jesec/flood
 Description: modern web user interface for various torrent clients
 
+Package: flood
+Version: 4.9.2-0
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Recommends: mediainfo
+Filename: ./pool/main/jesec/flood/v4.9.2/flood-linux-arm64.deb
+Size: 27423800
+MD5sum: d3a0496ac2c44e204e3b5e1cbb63404d
+SHA1: b0561c560819946929b4457a1a78f995962b0c7e
+SHA256: e2acb29fc0a572a4053c1f11de6dd7e71a86c72d3dafe1009a46c932ed53d2d3
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/flood
+Description: modern web user interface for various torrent clients
+
