@@ -1,5 +1,5 @@
 import contextlib
-from datetime import datetime
+from datetime import UTC, datetime
 import functools
 from operator import itemgetter
 import re
@@ -227,7 +227,7 @@ def main():
 
 def encode_json(val: Any):
     if isinstance(val, datetime):
-        return val.isoformat()
+        return val.astimezone(UTC).isoformat()
     raise TypeError(f"Cannot serialize object of {type(val)}")
 
 
