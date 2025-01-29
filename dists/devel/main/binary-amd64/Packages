@@ -34,10 +34,10 @@ Architecture: amd64
 Maintainer: Jesse Chan <jc@linux.com>
 Recommends: mediainfo
 Filename: ./pool/main/jesec/flood/v4.8.2/flood-linux-x64.deb
-Size: 26214294
-MD5sum: 0e4ad7e9ee4686a6770a956155abc1cc
-SHA1: bd2e3fea0afa022f57ac77fc762b8e299c4258d9
-SHA256: 0dcd6d2422d2c13b920d2e4fb2a45a2d9e9038bcf425fff2a00e1fc27a7d864e
+Size: 26214022
+MD5sum: 1b0603836f27714047e373f7d85fc66d
+SHA1: 1c0060e7fb7e0641df847b85b5f471b92fc62fbf
+SHA256: 7d161781c7e2b0a91a58d98ef5b22b2991f710959d2390a888dda5da41a83515
 Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/flood
