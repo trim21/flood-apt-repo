@@ -152,7 +152,9 @@ try:
                     local_name.unlink()
 finally:
     # remove leading prefix `v`
-    package_cache.sort(key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch))
+    package_cache.sort(
+        key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch), reverse=True
+    )
     cache_file_path.write_text(
         json.dumps(
             [dataclasses.asdict(c) for c in package_cache], ensure_ascii=False, indent=2
