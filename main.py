@@ -117,68 +117,67 @@ def handle_repo(repo: str):
         pass
 
     try:
-        for repo in config.repositories:
-            for tag in parse_obj_as(
-                list[Release],
-                sorted(
-                    client.get(
-                        f"https://api.github.com/repos/{repo}/releases",
-                        headers=headers,
-                        params={"per_page": 100},
+        for tag in parse_obj_as(
+            list[Release],
+            sorted(
+                client.get(
+                    f"https://api.github.com/repos/{repo}/releases",
+                    headers=headers,
+                    params={"per_page": 100},
+                )
+                .raise_for_status()
+                .json(),
+                key=itemgetter("published_at"),
+                reverse=True,
+            ),
+        ):
+            print("processing", repo, tag.tag_name, file=sys.stderr, flush=True)
+            for asset in tag.assets:
+                if not asset.name.endswith(".deb"):
+                    continue
+                if any(
+                    (cache.tag == tag.tag_name and cache.filename == asset.name)
+                    for cache in package_cache
+                ):
+                    continue
+                local_dir = pool_root.joinpath(repo, tag.tag_name)
+                local_dir.mkdir(exist_ok=True, parents=True)
+                local_name = local_dir.joinpath(asset.name)
+                print(
+                    "processing",
+                    repo,
+                    tag.tag_name,
+                    asset.name,
+                    file=sys.stderr,
+                    flush=True,
+                )
+                deb = client.get(
+                    asset.browser_download_url, follow_redirects=True, timeout=30
+                )
+                local_name.write_bytes(deb.content)
+                if IS_CI:
+                    package = subprocess.check_output(
+                        ["dpkg-scanpackages", "--multiversion", "."],
+                        cwd=config.output_dir,
                     )
-                    .raise_for_status()
-                    .json(),
-                    key=itemgetter("published_at"),
-                    reverse=True,
-                ),
-            ):
-                print("processing", repo, tag.tag_name, file=sys.stderr, flush=True)
-                for asset in tag.assets:
-                    if not asset.name.endswith(".deb"):
-                        continue
-                    if any(
-                        (cache.tag == tag.tag_name and cache.filename == asset.name)
-                        for cache in package_cache
-                    ):
-                        continue
-                    local_dir = pool_root.joinpath(repo, tag.tag_name)
-                    local_dir.mkdir(exist_ok=True, parents=True)
-                    local_name = local_dir.joinpath(asset.name)
-                    print(
-                        "processing",
-                        repo,
-                        tag.tag_name,
-                        asset.name,
-                        file=sys.stderr,
-                        flush=True,
-                    )
-                    deb = client.get(
-                        asset.browser_download_url, follow_redirects=True, timeout=30
-                    )
-                    local_name.write_bytes(deb.content)
-                    if IS_CI:
-                        package = subprocess.check_output(
-                            ["dpkg-scanpackages", "--multiversion", "."],
-                            cwd=config.output_dir,
+                    pkg = package.decode()
+                    m = arch_pattern.search(pkg)
+                    if not m:
+                        raise ValueError(
+                            "can not find arch in package file {!r}".format(pkg)
                         )
-                        pkg = package.decode()
-                        m = arch_pattern.search(pkg)
-                        if not m:
-                            raise ValueError(
-                                "can not find arch in package file {!r}".format(pkg)
-                            )
-                        arch = m.group(1)
-                        package_cache.append(
-                            PackageCache(
-                                tag=tag.tag_name,
-                                filename=asset.name,
-                                arch=arch,
-                                package=pkg,
-                                published_at=tag.published_at,
-                            )
+                    arch = m.group(1)
+                    package_cache.append(
+                        PackageCache(
+                            tag=tag.tag_name,
+                            filename=asset.name,
+                            arch=arch,
+                            package=pkg,
+                            published_at=tag.published_at,
                         )
+                    )
 
-                        local_name.unlink()
+                    local_name.unlink()
     finally:
         package_cache.sort(key=lambda c: (c.published_at, c.filename), reverse=True)
         new_packages = json.dumps(
