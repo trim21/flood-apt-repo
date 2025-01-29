@@ -1,5 +1,6 @@
 import contextlib
 import functools
+from operator import itemgetter
 import re
 import json
 import os
@@ -10,7 +11,6 @@ import sys
 import tomllib
 from typing import Any, TypeVar
 
-import semver
 import httpx
 import dataclasses
 from pydantic import TypeAdapter
@@ -122,14 +122,16 @@ def main():
         for repo in config.repositories:
             for tag in parse_obj_as(
                 list[Release],
-                (
+                sorted(
                     client.get(
                         f"https://api.github.com/repos/{repo}/releases",
                         headers=headers,
                         params={"per_page": 100},
                     )
                     .raise_for_status()
-                    .json()
+                    .json(),
+                    key=itemgetter("published_at"),
+                    reverse=True,
                 ),
             ):
                 print("processing", tag.tag_name, file=sys.stderr, flush=True)
@@ -178,10 +180,7 @@ def main():
 
                         local_name.unlink()
     finally:
-        # remove leading prefix `v`
-        package_cache.sort(
-            key=lambda c: (semver.Version.parse(c.tag[1:]), c.filename), reverse=True
-        )
+        package_cache.sort(key=lambda c: (c.tag, c.filename), reverse=True)
         new_packages = json.dumps(
             [dataclasses.asdict(c) for c in package_cache],
             ensure_ascii=False,
