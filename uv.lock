@@ -91,9 +91,9 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "httpx", specifier = "~=0.28" },
-    { name = "pydantic", specifier = "~=2.10" },
-    { name = "semver", specifier = "~=3.0" },
+    { name = "httpx", specifier = "==0.28.1" },
+    { name = "pydantic", specifier = "==2.10.6" },
+    { name = "semver", specifier = "==3.0.4" },
 ]
 
 [[package]]
