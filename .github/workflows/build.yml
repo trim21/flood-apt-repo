@@ -41,7 +41,6 @@ jobs:
         working-directory: dist
         run: |
           CINFO="$(git log -1 --pretty="[%h] %an: %s")"
-          touch .nojekyll
           git add --all
           git -c user.name=GitHub -c user.email=noreply@github.com commit \
             -m "Auto deploy from GitHub Actions build ${GITHUB_RUN_NUMBER}" \
