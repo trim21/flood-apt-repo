@@ -10,3 +10,5 @@ output/dists
 output/pool
 output/Packages
 output/Packages.*
+
+.vscode/
