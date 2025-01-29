@@ -1,5 +1,0 @@
-output_dir = "dist"
-suite = "stable"
-component = "main"
-architectures = ["all", "amd64", "arm64", "armhf", "i386"]
-repositories = ["jesec/flood"]
