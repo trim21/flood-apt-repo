@@ -12,3 +12,4 @@ output/Packages
 output/Packages.*
 
 .vscode/
+.venv/
