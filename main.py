@@ -177,13 +177,19 @@ def main():
         package_cache.sort(
             key=lambda c: (semver.Version.parse(c.tag[1:]), c.arch), reverse=True
         )
-        cache_file_path.write_text(
-            json.dumps(
-                [dataclasses.asdict(c) for c in package_cache],
-                ensure_ascii=False,
-                indent=2,
-            )
+        new_packages = json.dumps(
+            [dataclasses.asdict(c) for c in package_cache],
+            ensure_ascii=False,
+            indent=2,
         )
+        changed = True
+        if cache_file_path.exists():
+            changed = new_packages == cache_file_path.read_text(encoding="utf-8")
+        if changed:
+            cache_file_path.write_text(new_packages)
+
+    if not changed:
+        return
 
     for release in package_cache:
         top_dir = release_dir.joinpath(
