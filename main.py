@@ -115,6 +115,7 @@ try:
                             check=True,
                         )
                         package_cache[asset.name] = f.getvalue()
+                local_name.unlink()
 finally:
     cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
 
