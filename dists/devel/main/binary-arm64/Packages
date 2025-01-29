@@ -163,3 +163,185 @@ Priority: optional
 Homepage: https://github.com/jesec/flood
 Description: modern web user interface for various torrent clients
 
+Package: rtorrent
+Version: 0.9.8-jc-r9
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r9/rtorrent-linux-arm64.deb
+Size: 1834708
+MD5sum: 9c9445b23a10aa7ea35204509a1b9d58
+SHA1: b73ea25f5c21da7d6f58f84bceaa8042998ad7e7
+SHA256: 1409a24a33bdcd22558b7b16a33cf0ed7e4d45da4d7d85366d6a9c22d8bf1950
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r8
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r8/rtorrent-linux-arm64.deb
+Size: 1829702
+MD5sum: ccec47b9e40001c017ec928266c5cc5e
+SHA1: 43ba33693fba588fd938d42e9a780cfab14091a7
+SHA256: 6940f7bbd7d60b67820b00cfad209fca911698295a1be8ec634662fce97caef2
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r7
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r7/rtorrent-linux-arm64.deb
+Size: 1826166
+MD5sum: 65cf568c26cf6d308503f7a7c583160a
+SHA1: 541f764a028531449d5575e0a97ec8444e62f5a3
+SHA256: dc9f570358bcbae63fc92b5608fdf72f01b4c884493b52510023c8c2d982421a
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r6
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r6/rtorrent-linux-arm64.deb
+Size: 1826432
+MD5sum: ed3e29f2c3a13af3a9a9fb2c5a5d2d5e
+SHA1: 4b8e74acf72e94732063fa9934431af35ba3ce3f
+SHA256: 5566f4e6d387385bf847f430989b147266ea96f107debae87c084a7dd76b1f81
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r5
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r5/rtorrent-linux-arm64.deb
+Size: 1826434
+MD5sum: 7db39473dd0e88efa99e0c35bfef2349
+SHA1: 22acb5682e19b41a57d835a467af0f02b12945d2
+SHA256: baec139bb984ba438622124bc9fbe6fa16957f681a68754851ceb482e20b60ed
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r4
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r4/rtorrent-linux-arm64.deb
+Size: 1781984
+MD5sum: 74e8299f64f6182936df45ddd035b683
+SHA1: f882a6e9810b918fd204a4a38b994ff842da9fe3
+SHA256: ea3200d44fbb318bf46fd9b59ca5ea03ba8a4525b89d3992d35c605b896d3082
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r16
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r16/rtorrent-linux-arm64.deb
+Size: 2037196
+MD5sum: bc562648f10696d697f02d977cb5329d
+SHA1: 51eec894b0e0b9c145e67be7de5ac43c319c80be
+SHA256: c536a55ea82462c2b6dee4b56e0975f9ff9d36cc73441208243cf6e78f591804
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r15
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-arm64.deb
+Size: 1891808
+MD5sum: 38ed926b2060f30fa62c76c907c7ec6c
+SHA1: ff980f23e07f5e4472e0703d3367b4b121a7106a
+SHA256: 917798997d89f62f4009af49664660ec33ca9dfd35b064566d28725b5fe49bcf
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r14
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r14/rtorrent-linux-arm64.deb
+Size: 1850438
+MD5sum: 817494f23eb48eda90fee772ca9661c7
+SHA1: 29a4045d14d418729111f0fe6a9ef3b1dbf1605a
+SHA256: f49bd933f630879fdea3a841e81e457b1e40ee789096607e544d9c2941c44d0d
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r13
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r13/rtorrent-linux-arm64.deb
+Size: 1845394
+MD5sum: fd331250ae82a31dbc5486ac65b5da48
+SHA1: 0f0b7318f2595dd61b27bc69e8ee14804963ac00
+SHA256: ced6c444aa75c3b7eb6c68433cd224056f6c055cf783c33e077bf6e0f8acc80f
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r12
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r12/rtorrent-linux-arm64.deb
+Size: 1845406
+MD5sum: 78dd5574f70680cdd05e34aad4a66401
+SHA1: c3a7390d7f60b02d43ce7a59255d2f6c1bd751f3
+SHA256: d9b53b4860a099b977f512c91d6a4e06b68f201558f48ebe85165948a9188bb8
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r11
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r11/rtorrent-linux-arm64.deb
+Size: 1842284
+MD5sum: 4f18a0bcc59b1892333f9d7f0f039575
+SHA1: 2e318cb9a38457d3e163f91c6e2861403c9f8c7f
+SHA256: cb3d050602776ac30dd37692a640228e621396e3e340cc46fb671d1fff74afca
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
+Package: rtorrent
+Version: 0.9.8-jc-r10
+Architecture: arm64
+Maintainer: Jesse Chan <jc@linux.com>
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r10/rtorrent-linux-arm64.deb
+Size: 1835178
+MD5sum: b0c5fc570b4feb12c919bf855922719d
+SHA1: b2266743a203e1516089d71c7a4f9ac060b1dad2
+SHA256: f5e29798b5b05498b40cc6c959ed896dec043bac6718ef794813bea8f98da9a4
+Section: contrib/devel
+Priority: optional
+Homepage: https://github.com/jesec/rtorrent
+Description: a stable and high-performance BitTorrent client
+
