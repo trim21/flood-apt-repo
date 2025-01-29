@@ -114,7 +114,7 @@ try:
                         ["dpkg-scanpackages", "--multiversion", "."],
                         cwd=config.output_dir,
                     )
-                    package_cache[asset.name] = package
+                    package_cache[asset.name] = package.decode()
                     local_name.unlink()
 finally:
     cache_file_path.write_text(json.dumps(package_cache, ensure_ascii=False, indent=2))
