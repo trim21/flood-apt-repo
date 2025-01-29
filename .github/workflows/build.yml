@@ -36,7 +36,6 @@ jobs:
           PAT: ${{ secrets.PAT }}
 
       - name: Deploy to GitHub Pages
-        if: "${{ github.ref == 'refs/heads/master' }}"
         working-directory: dist
         run: |
           CINFO="$(git log -1 --pretty="[%h] %an: %s")"
