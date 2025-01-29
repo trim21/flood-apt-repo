@@ -181,6 +181,7 @@ def main():
             [dataclasses.asdict(c) for c in package_cache],
             ensure_ascii=False,
             indent=2,
+            sort_keys=True,
         )
         changed = True
         if cache_file_path.exists():
