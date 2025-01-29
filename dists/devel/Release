@@ -1,22 +1,22 @@
 Architectures: all amd64 arm64 armhf i386
 Codename: devel
 Components: main
-Date: Wed, 29 Jan 2025 17:40:03 +0000
+Date: Wed, 29 Jan 2025 17:48:16 +0000
 Label: jesec
 Suite: devel
 MD5Sum:
- e3f8851d729972839adb45667991be58              139 Release
- eaedaf5a1532c312264bbf0018fd9f1f             5000 main/binary-amd64/Packages
- 6c692d106bc77ecab45f17724080b8b1             5020 main/binary-arm64/Packages
+ cd0a5733ee6c414eb56e9e74dcfecac1              139 Release
+ be16800efe937744db3faf4b878d90ae             5000 main/binary-amd64/Packages
+ 51a9d2f4d3bac41b16528fa11a8dfdc4             5020 main/binary-arm64/Packages
 SHA1:
- cdced56cf1dd5fd775aa93e2c08c2099052405a7              139 Release
- 6fc6849963dbc70141a4d5c50a73035acea1d8f0             5000 main/binary-amd64/Packages
- 674665bbbf434004cbeb676e2a6fecc1680ff1f3             5020 main/binary-arm64/Packages
+ 9aa091f3aa67c1df53d7ec73266e0e6cf1628ecc              139 Release
+ cd71e6cfd6d13c4cf8d801ff9a8ae95af2752003             5000 main/binary-amd64/Packages
+ 0423f4bb2d2111c894de415bdd7082d97c582319             5020 main/binary-arm64/Packages
 SHA256:
- 7b7115b86c0dfe44e2c996744a565ed8554dbcb9e054cfa8cccddec22455f1bb              139 Release
- 4a8babd7bc4e2a3a44bb18ffe6a8f016cba92c92f9860367f67db8a2689fe276             5000 main/binary-amd64/Packages
- 1462834b63c4209f226b9e1639598e18026762dc3fba983e5a5a41caac6c73a3             5020 main/binary-arm64/Packages
+ bf913866bb851dc1042bb697c713a8ac317dd8329db300c298fbb706bfa522cb              139 Release
+ f2c83f225b39f895f42b05f7fbb05c8a22e2c84390fab7986ffd9d5852180b9e             5000 main/binary-amd64/Packages
+ c6f88a1f077591581877845cd43f0554c1af9c01f834793181f93e249d54f28c             5020 main/binary-arm64/Packages
 SHA512:
- e3f4cff6931e4d069439e64bfdd1f0181d6de6549f6a09e64b2c6147b3ae6687be81069780203a5b127ef9298385dc6c684443c18d098ddc810d760807145b84              139 Release
- 24a0e618989c6c7efafea5128a7256466590849d3e005a228f67e70577982165aba1d389d7c6c96e6f89212355a2c69f5f8ad084ec7249908a29079730f3ca76             5000 main/binary-amd64/Packages
- 82b490686adb4a960e6cfbd377797c5bc01371a0aa05aa08de5e086fe7908d6e8b86a7c2e035104a2cd074ec14730f084cea66d69f057b932841a5224f15422e             5020 main/binary-arm64/Packages
+ e175ca98b62f407d463a049bc77722d58129ae4ffbaf05d50aed8276932a327a3feb477e45c25adb44fa0350ce516c524c0bf08b450b23a0e57de679b53421c7              139 Release
+ 35290d3695ec3e9a15972489ecfc5540d9f35be741910ed2ae2e90dab2058a69a72624cc0fa89c2bbbaa6a3f2ec5f4c6b4729a0a3a6457ad734d3c7996eea877             5000 main/binary-amd64/Packages
+ 40da237f834b5a74ffb83682fdfdad007a264374b272f17c67a3785f19a1ca73a722315156c4aef79273e711a5010b94ebca70bad90b00d8aa95e6db1d129175             5020 main/binary-arm64/Packages
