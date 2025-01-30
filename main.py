@@ -62,8 +62,8 @@ class PackageCache:
 root = Path(__file__).parent
 public = root.joinpath("public")
 
-config = parse_obj_as(
-    Config, tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
+config = TypeAdapter(
+    Config).validate_python(tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
 )
 
 pool_root = config.output_dir.joinpath("pool", config.component)
