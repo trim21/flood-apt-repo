@@ -1,27 +1,27 @@
 Package: flood
-Version: 4.8.2-0
+Version: 4.9.3-0
 Architecture: amd64
 Maintainer: Jesse Chan <jc@linux.com>
 Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.8.2/flood-linux-x64.deb
-Size: 26214022
-MD5sum: 1b0603836f27714047e373f7d85fc66d
-SHA1: 1c0060e7fb7e0641df847b85b5f471b92fc62fbf
-SHA256: 7d161781c7e2b0a91a58d98ef5b22b2991f710959d2390a888dda5da41a83515
+Filename: ./pool/main/jesec/flood/v4.9.3/flood-linux-x64.deb
+Size: 27714958
+MD5sum: d687605027a161962370b06433ea7597
+SHA1: 45a102b97d50851a6511182205d593d9af0132a9
+SHA256: 3fa3826a15a765f97756bc6a026be5423cdf0b9cdc7c91207cce4904a6c6ab39
 Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/flood
 Description: modern web user interface for various torrent clients
 
 Package: rtorrent
-Version: 0.9.8-jc-r14
+Version: 0.9.8-jc-r16
 Architecture: amd64
 Maintainer: Jesse Chan <jc@linux.com>
-Filename: ./pool/main/jesec/rtorrent/v0.9.8-r14/rtorrent-linux-amd64.deb
-Size: 2143140
-MD5sum: 959aaa85e9ac55a10ce0498308cb248e
-SHA1: 0585153a0c4a63761999f9fe12ffd29b6180a46e
-SHA256: 2a1f0e4c61c1474e8b56cbe673f47a41642fc6a51eab9177145ace1c327af768
+Filename: ./pool/main/jesec/rtorrent/v0.9.8-r16/rtorrent-linux-amd64.deb
+Size: 2176364
+MD5sum: 851ac112124c60aca90738fa99643d77
+SHA1: 18cc42f57cee7a170e32451137e28c64aa4246f7
+SHA256: 880dafaa37e57d86e0898a1e03ca5050471a768c684cb2267708ef0487377e89
 Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/rtorrent
