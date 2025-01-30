@@ -1,6 +1,5 @@
 import contextlib
 import dataclasses
-import functools
 import json
 import os
 import re
@@ -27,22 +26,6 @@ client = httpx.Client(headers=headers)
 
 
 arch_pattern = re.compile("Architecture: (\\S+)\n")
-
-
-_T = TypeVar("_T")
-
-
-@functools.cache
-def get_type_adapter(t: type[_T]) -> TypeAdapter[_T]:
-    return TypeAdapter(t)
-
-
-_K = TypeVar("_K")
-
-
-def parse_obj_as(typ: type[_K], value: Any, *, strict: bool | None = None) -> _K:
-    t: TypeAdapter[_K] = get_type_adapter(typ)  # type: ignore[arg-type]
-    return t.validate_python(value, strict=strict)
 
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
@@ -108,8 +91,8 @@ def handle_repo(repo: str):
         "package-cache-{}.json".format(repo.replace("/", "-"))
     )
     try:
-        package_cache = parse_obj_as(
-            list[PackageCache], json.loads(cache_file_path.read_bytes())
+        package_cache = TypeAdapter(
+            list[PackageCache]).validate_python( json.loads(cache_file_path.read_bytes())
         )
     except (json.JSONDecodeError, pydantic.ValidationError):
         cache_file_path.unlink(missing_ok=True)
@@ -121,8 +104,8 @@ def handle_repo(repo: str):
     packages = []
 
     try:
-        for tag in parse_obj_as(
-            list[Release],
+        for tag in TypeAdapter(
+            list[Release]).validate_python(
             sorted(
                 client.get(
                     f"https://api.github.com/repos/{repo}/releases",
