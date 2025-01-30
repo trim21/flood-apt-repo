@@ -1,21 +1,21 @@
 import contextlib
-from datetime import UTC, datetime
+import dataclasses
 import functools
-from operator import itemgetter
-import re
 import json
 import os
-from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
-import tomllib
+from datetime import UTC, datetime
+from operator import itemgetter
+from pathlib import Path
 from typing import Any, TypeVar
 
 import httpx
-import dataclasses
-from pydantic import TypeAdapter
 import pydantic
+import tomllib
+from pydantic import TypeAdapter
 
 IS_CI = "CI" in os.environ
 
@@ -105,7 +105,7 @@ def copy_public_files():
 def handle_repo(repo: str):
     package_cache: list[PackageCache] = []
     cache_file_path = config.output_dir.joinpath(
-        "package-cache-{}.json".format(repo.replace("/", "-"))
+        "package-cache-{}.1.json".format(repo.replace("/", "-"))
     )
     try:
         package_cache = parse_obj_as(
@@ -115,6 +115,8 @@ def handle_repo(repo: str):
         cache_file_path.unlink(missing_ok=True)
     except FileNotFoundError:
         pass
+
+    find = False
 
     try:
         for tag in parse_obj_as(
@@ -131,6 +133,8 @@ def handle_repo(repo: str):
                 reverse=True,
             ),
         ):
+            if find:
+                break
             print("processing", repo, tag.tag_name, file=sys.stderr, flush=True)
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
@@ -140,6 +144,7 @@ def handle_repo(repo: str):
                     for cache in package_cache
                 ):
                     continue
+                find = True
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
                 local_name = local_dir.joinpath(asset.name)
