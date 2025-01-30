@@ -7,15 +7,15 @@ import re
 import shutil
 import subprocess
 import sys
+import tomllib
 from datetime import UTC, datetime
 from operator import itemgetter
 from pathlib import Path
 from typing import Any, TypeVar
 
 import httpx
-import tomllib
-from pydantic import TypeAdapter
 import pydantic
+from pydantic import TypeAdapter
 
 IS_CI = "CI" in os.environ
 
