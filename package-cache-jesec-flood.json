@@ -4,7 +4,6 @@
     "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-x64.deb\nSize: 27714958\nMD5sum: d687605027a161962370b06433ea7597\nSHA1: 45a102b97d50851a6511182205d593d9af0132a9\nSHA256: 3fa3826a15a765f97756bc6a026be5423cdf0b9cdc7c91207cce4904a6c6ab39\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-01-29T18:27:54+00:00",
-    "repo": "jesec/flood",
     "tag": "v4.9.3"
   },
   {
@@ -12,7 +11,6 @@
     "filename": "flood-linux-arm64.deb",
     "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-arm64.deb\nSize: 27375734\nMD5sum: 6641537eb1f73fd6231372bc539babfb\nSHA1: 8da49aac24edb49dff6ee78138e594b697cf3231\nSHA256: 87e344be58b22225e6e8a12873d2206623eec26d75d09c983e0fecb829c44e05\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-01-29T18:27:54+00:00",
-    "repo": "jesec/flood",
     "tag": "v4.9.3"
   },
   {
@@ -20,7 +18,6 @@
     "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.9.2-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.2/flood-linux-x64.deb\nSize: 27763104\nMD5sum: 3ff88e103f7c3d6fb55d62a0203d589a\nSHA1: 55ca79f8243f105a35d2b5343e359639b6e2db36\nSHA256: 4c71dde0e8f7ea30ec68cfe7b0f6554295b62e171653c7db53bc603df9b3804b\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-01-29T17:20:38+00:00",
-    "repo": "jesec/flood",
     "tag": "v4.9.2"
   },
   {
@@ -28,7 +25,20 @@
     "filename": "flood-linux-arm64.deb",
     "package": "Package: flood\nVersion: 4.9.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.2/flood-linux-arm64.deb\nSize: 27423800\nMD5sum: d3a0496ac2c44e204e3b5e1cbb63404d\nSHA1: b0561c560819946929b4457a1a78f995962b0c7e\nSHA256: e2acb29fc0a572a4053c1f11de6dd7e71a86c72d3dafe1009a46c932ed53d2d3\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-01-29T17:20:38+00:00",
-    "repo": "jesec/flood",
     "tag": "v4.9.2"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.8.2-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.8.2/flood-linux-x64.deb\nSize: 26214022\nMD5sum: 1b0603836f27714047e373f7d85fc66d\nSHA1: 1c0060e7fb7e0641df847b85b5f471b92fc62fbf\nSHA256: 7d161781c7e2b0a91a58d98ef5b22b2991f710959d2390a888dda5da41a83515\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2024-05-04T03:38:13+00:00",
+    "tag": "v4.8.2"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.8.2-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.8.2/flood-linux-arm64.deb\nSize: 25875840\nMD5sum: fee238254e8198ae059b188ba4c80a70\nSHA1: 1baa87c6842ef19dadea1ddd2b2442db6f09158f\nSHA256: da61fe0d50ba90c830b6285710a5f7991a054e6956b7405f1d9c1948855f4418\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2024-05-04T03:38:13+00:00",
+    "tag": "v4.8.2"
   }
 ]
