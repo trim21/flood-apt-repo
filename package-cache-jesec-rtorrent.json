@@ -14,5 +14,21 @@
     "published_at": "2022-04-17T02:43:24+00:00",
     "repo": "jesec/rtorrent",
     "tag": "v0.9.8-r16"
+  },
+  {
+    "arch": "arm64",
+    "filename": "rtorrent-linux-arm64.deb",
+    "package": "Package: rtorrent\nVersion: 0.9.8-jc-r15\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nFilename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-arm64.deb\nSize: 1891808\nMD5sum: 38ed926b2060f30fa62c76c907c7ec6c\nSHA1: ff980f23e07f5e4472e0703d3367b4b121a7106a\nSHA256: 917798997d89f62f4009af49664660ec33ca9dfd35b064566d28725b5fe49bcf\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/rtorrent\nDescription: a stable and high-performance BitTorrent client\n\n",
+    "published_at": "2021-10-09T21:19:34+00:00",
+    "repo": "jesec/rtorrent",
+    "tag": "v0.9.8-r15"
+  },
+  {
+    "arch": "amd64",
+    "filename": "rtorrent-linux-amd64.deb",
+    "package": "Package: rtorrent\nVersion: 0.9.8-jc-r15\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nFilename: ./pool/main/jesec/rtorrent/v0.9.8-r15/rtorrent-linux-amd64.deb\nSize: 2184722\nMD5sum: 32a56e85ec554c954ddbe0bed453f5bd\nSHA1: c151a07a8fa4d650155f466bec544fc1c9704d02\nSHA256: 106e3969dd8583994a899ea104b0828bb887caab0e6cda872c624d228a62aa7a\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/rtorrent\nDescription: a stable and high-performance BitTorrent client\n\n",
+    "published_at": "2021-10-09T21:19:34+00:00",
+    "repo": "jesec/rtorrent",
+    "tag": "v0.9.8-r15"
   }
 ]
