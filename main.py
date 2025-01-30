@@ -1,7 +1,6 @@
 import contextlib
 import dataclasses
 import functools
-import json
 import os
 import re
 import shutil
@@ -13,7 +12,6 @@ from pathlib import Path
 from typing import Any, TypeVar
 
 import httpx
-import pydantic
 import tomllib
 from pydantic import TypeAdapter
 
