@@ -104,17 +104,17 @@ def copy_public_files():
 
 def handle_repo(repo: str):
     package_cache: list[PackageCache] = []
-    cache_file_path = config.output_dir.joinpath(
-        "package-cache-{}.1.json".format(repo.replace("/", "-"))
-    )
-    try:
-        package_cache = parse_obj_as(
-            list[PackageCache], json.loads(cache_file_path.read_bytes())
-        )
-    except (json.JSONDecodeError, pydantic.ValidationError):
-        cache_file_path.unlink(missing_ok=True)
-    except FileNotFoundError:
-        pass
+    # cache_file_path = config.output_dir.joinpath(
+    #     "package-cache-{}.1.json".format(repo.replace("/", "-"))
+    # )
+    # try:
+    #     package_cache = parse_obj_as(
+    #         list[PackageCache], json.loads(cache_file_path.read_bytes())
+    #     )
+    # except (json.JSONDecodeError, pydantic.ValidationError):
+    #     cache_file_path.unlink(missing_ok=True)
+    # except FileNotFoundError:
+    #     pass
 
     find = False
 
@@ -185,14 +185,14 @@ def handle_repo(repo: str):
                     local_name.unlink()
     finally:
         package_cache.sort(key=lambda c: (c.published_at, c.filename), reverse=True)
-        new_packages = json.dumps(
-            [dataclasses.asdict(c) for c in package_cache],
-            ensure_ascii=False,
-            indent=2,
-            sort_keys=True,
-            default=encode_json,
-        )
-        cache_file_path.write_text(new_packages)
+        # new_packages = json.dumps(
+        #     [dataclasses.asdict(c) for c in package_cache],
+        #     ensure_ascii=False,
+        #     indent=2,
+        #     sort_keys=True,
+        #     default=encode_json,
+        # )
+        # cache_file_path.write_text(new_packages)
 
     for release in package_cache:
         top_dir = release_dir.joinpath(
