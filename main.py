@@ -69,7 +69,6 @@ class Release:
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
 class PackageCache:
-    repo: str
     tag: str
     filename: str
     published_at: datetime
@@ -143,11 +142,7 @@ def handle_repo(repo: str):
                 if not asset.name.endswith(".deb"):
                     continue
                 if any(
-                    (
-                        cache.repo == repo
-                        and cache.tag == tag.tag_name
-                        and cache.filename == asset.name
-                    )
+                    (cache.tag == tag.tag_name and cache.filename == asset.name)
                     for cache in package_cache
                 ):
                     continue
@@ -180,7 +175,6 @@ def handle_repo(repo: str):
                         )
                     arch = m.group(1)
                     c = PackageCache(
-                        repo=repo,
                         tag=tag.tag_name,
                         filename=asset.name,
                         arch=arch,
