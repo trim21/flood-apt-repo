@@ -1,6 +1,7 @@
 import contextlib
 import dataclasses
 import functools
+import json
 import os
 import re
 import shutil
@@ -14,6 +15,7 @@ from typing import Any, TypeVar
 import httpx
 import tomllib
 from pydantic import TypeAdapter
+import pydantic
 
 IS_CI = "CI" in os.environ
 
@@ -67,6 +69,7 @@ class Release:
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
 class PackageCache:
+    repo: str
     tag: str
     filename: str
     published_at: datetime
@@ -102,19 +105,21 @@ def copy_public_files():
 
 def handle_repo(repo: str):
     package_cache: list[PackageCache] = []
-    # cache_file_path = config.output_dir.joinpath(
-    #     "package-cache-{}.1.json".format(repo.replace("/", "-"))
-    # )
-    # try:
-    #     package_cache = parse_obj_as(
-    #         list[PackageCache], json.loads(cache_file_path.read_bytes())
-    #     )
-    # except (json.JSONDecodeError, pydantic.ValidationError):
-    #     cache_file_path.unlink(missing_ok=True)
-    # except FileNotFoundError:
-    #     pass
+    cache_file_path = config.output_dir.joinpath(
+        "package-cache-{}.json".format(repo.replace("/", "-"))
+    )
+    try:
+        package_cache = parse_obj_as(
+            list[PackageCache], json.loads(cache_file_path.read_bytes())
+        )
+    except (json.JSONDecodeError, pydantic.ValidationError):
+        cache_file_path.unlink(missing_ok=True)
+    except FileNotFoundError:
+        pass
 
     find = False
+
+    packages = []
 
     try:
         for tag in parse_obj_as(
@@ -138,7 +143,11 @@ def handle_repo(repo: str):
                 if not asset.name.endswith(".deb"):
                     continue
                 if any(
-                    (cache.tag == tag.tag_name and cache.filename == asset.name)
+                    (
+                        cache.repo == repo
+                        and cache.tag == tag.tag_name
+                        and cache.filename == asset.name
+                    )
                     for cache in package_cache
                 ):
                     continue
@@ -170,29 +179,31 @@ def handle_repo(repo: str):
                             "can not find arch in package file {!r}".format(pkg)
                         )
                     arch = m.group(1)
-                    package_cache.append(
-                        PackageCache(
-                            tag=tag.tag_name,
-                            filename=asset.name,
-                            arch=arch,
-                            package=pkg,
-                            published_at=tag.published_at,
-                        )
+                    c = PackageCache(
+                        repo=repo,
+                        tag=tag.tag_name,
+                        filename=asset.name,
+                        arch=arch,
+                        package=pkg,
+                        published_at=tag.published_at,
                     )
+                    package_cache.append(c)
+                    packages.append(c)
 
                     local_name.unlink()
     finally:
         package_cache.sort(key=lambda c: (c.published_at, c.filename), reverse=True)
-        # new_packages = json.dumps(
-        #     [dataclasses.asdict(c) for c in package_cache],
-        #     ensure_ascii=False,
-        #     indent=2,
-        #     sort_keys=True,
-        #     default=encode_json,
-        # )
-        # cache_file_path.write_text(new_packages)
+        cache_file_path.write_text(
+            json.dumps(
+                [dataclasses.asdict(c) for c in package_cache],
+                ensure_ascii=False,
+                indent=2,
+                sort_keys=True,
+                default=encode_json,
+            )
+        )
 
-    for release in package_cache:
+    for release in packages:
         top_dir = release_dir.joinpath(
             config.component, "binary-{}".format(release.arch)
         )
