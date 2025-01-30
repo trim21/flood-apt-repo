@@ -141,12 +141,15 @@ def handle_repo(repo: str):
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
-                if any(
-                    (cache.tag == tag.tag_name and cache.filename == asset.name)
-                    for cache in package_cache
-                ):
-                    continue
                 find = True
+                cached = [
+                    cache
+                    for cache in package_cache
+                    if (cache.tag == tag.tag_name and cache.filename == asset.name)
+                ]
+                if cached:
+                    packages.append(cached[0])
+                    continue
                 local_dir = pool_root.joinpath(repo, tag.tag_name)
                 local_dir.mkdir(exist_ok=True, parents=True)
                 local_name = local_dir.joinpath(asset.name)
