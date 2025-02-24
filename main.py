@@ -123,12 +123,16 @@ def handle_repo(repo: str) -> datetime:
         ):
             if find:
                 break
+
             print("processing", repo, tag.tag_name, file=sys.stderr, flush=True)
+
+            if all(not asset.name.endswith(".deb") for asset in tag.assets):
+                continue
+
+            latest_update = max(tag.published_at, latest_update)
+            find = True
+
             for asset in tag.assets:
-                if not asset.name.endswith(".deb"):
-                    continue
-                latest_update = max(tag.published_at, latest_update)
-                find = True
                 cached = [
                     cache
                     for cache in package_cache
