@@ -133,6 +133,9 @@ def handle_repo(repo: str) -> datetime:
             find = True
 
             for asset in tag.assets:
+                if not asset.name.endswith(".deb"):
+                    continue
+
                 cached = [
                     cache
                     for cache in package_cache
