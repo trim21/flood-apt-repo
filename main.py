@@ -62,8 +62,8 @@ class PackageCache:
 root = Path(__file__).parent
 public = root.joinpath("public")
 
-config = TypeAdapter(
-    Config).validate_python(tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
+config = TypeAdapter(Config).validate_python(
+    tomllib.loads(Path("config.toml").read_text(encoding="utf-8"))
 )
 
 pool_root = config.output_dir.joinpath("pool", config.component)
@@ -85,14 +85,18 @@ def copy_public_files():
             dist_file.write_bytes(src_file.read_bytes())
 
 
-def handle_repo(repo: str):
+zero_time = datetime(2020, 1, 1)
+
+
+def handle_repo(repo: str) -> datetime:
+    latest_update = zero_time
     package_cache: list[PackageCache] = []
     cache_file_path = config.output_dir.joinpath(
         "package-cache-{}.json".format(repo.replace("/", "-"))
     )
     try:
-        package_cache = TypeAdapter(
-            list[PackageCache]).validate_python( json.loads(cache_file_path.read_bytes())
+        package_cache = TypeAdapter(list[PackageCache]).validate_python(
+            json.loads(cache_file_path.read_bytes())
         )
     except (json.JSONDecodeError, pydantic.ValidationError):
         cache_file_path.unlink(missing_ok=True)
@@ -104,8 +108,7 @@ def handle_repo(repo: str):
     packages = []
 
     try:
-        for tag in TypeAdapter(
-            list[Release]).validate_python(
+        for tag in TypeAdapter(list[Release]).validate_python(
             sorted(
                 client.get(
                     f"https://api.github.com/repos/{repo}/releases",
@@ -124,6 +127,7 @@ def handle_repo(repo: str):
             for asset in tag.assets:
                 if not asset.name.endswith(".deb"):
                     continue
+                latest_update = max(tag.published_at, latest_update)
                 find = True
                 cached = [
                     cache
@@ -191,6 +195,8 @@ def handle_repo(repo: str):
         with top_dir.joinpath("Packages").open("a+") as f:
             f.write(release.package)
 
+    return latest_update
+
 
 def main():
     config.output_dir.mkdir(exist_ok=True, parents=True)
@@ -203,14 +209,22 @@ def main():
     release_dir.mkdir(parents=True, exist_ok=True)
     pool_root.mkdir(exist_ok=True, parents=True)
 
+    latest_update = datetime(2020, 1, 1)
+
     for repo in sorted(config.repositories):
-        handle_repo(repo)
+        latest_update = max(latest_update, handle_repo(repo))
 
     # Generate the "Release" file
     if IS_CI:
         with release_dir.joinpath("Release").open("wb") as f:
             subprocess.run(
                 [
+                    "fatetime",
+                    str(
+                        latest_update.astimezone(UTC).isoformat(
+                            sep=" ", timespec="seconds"
+                        )
+                    ),
                     "apt-ftparchive",
                     "-c",
                     f"{config.suite}.conf",

@@ -20,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - run: sudo apt-get install faketime -y
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
