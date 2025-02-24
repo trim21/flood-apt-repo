@@ -14,7 +14,7 @@ from typing import Any
 
 import httpx
 import pydantic
-from pydantic import TypeAdapter
+from pydantic import AwareDatetime, TypeAdapter
 
 IS_CI = "CI" in os.environ
 
@@ -47,7 +47,7 @@ class Asset:
 class Release:
     tag_name: str
     assets: list[Asset]
-    published_at: datetime
+    published_at: AwareDatetime
 
 
 @dataclasses.dataclass(kw_only=True, slots=True, frozen=True)
