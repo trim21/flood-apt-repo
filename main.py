@@ -213,7 +213,7 @@ def main():
     release_dir.mkdir(parents=True, exist_ok=True)
     pool_root.mkdir(exist_ok=True, parents=True)
 
-    latest_update = datetime(2020, 1, 1)
+    latest_update = zero_time
 
     for repo in sorted(config.repositories):
         latest_update = max(latest_update, handle_repo(repo))
