@@ -226,7 +226,7 @@ def main():
         with release_dir.joinpath("Release").open("wb") as f:
             subprocess.run(
                 [
-                    "fatetime",
+                    "faketime",
                     str(
                         latest_update.astimezone(UTC).isoformat(
                             sep=" ", timespec="seconds"
