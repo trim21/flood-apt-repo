@@ -10,7 +10,7 @@ import tomllib
 from datetime import UTC, datetime
 from operator import itemgetter
 from pathlib import Path
-from typing import Any, TypeVar
+from typing import Any
 
 import httpx
 import pydantic
@@ -85,7 +85,7 @@ def copy_public_files():
             dist_file.write_bytes(src_file.read_bytes())
 
 
-zero_time = datetime(2020, 1, 1)
+zero_time = datetime(2020, 1, 1, tzinfo=UTC)
 
 
 def handle_repo(repo: str) -> datetime:
