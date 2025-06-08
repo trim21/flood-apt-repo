@@ -2,6 +2,20 @@
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.9.5-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.5/flood-linux-x64.deb\nSize: 27253806\nMD5sum: ac12dd9ce81d6c3b0ea4dec227f363b3\nSHA1: fec0dcf0a411f88368e4936c301906ea326f4e74\nSHA256: c2acf57a85b033c94c308cbd7b918e142c58b238ff12a764805faa67692ca351\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2025-06-08T16:40:02+00:00",
+    "tag": "v4.9.5"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.9.5-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.5/flood-linux-arm64.deb\nSize: 26913290\nMD5sum: 8fe198136532782af7d561edc5c06ffd\nSHA1: 06180a2931d271ba785fe8762d3db36668762cb6\nSHA256: 635740b46f03faf1e12649b5de6673b6a81e7392b74c383f1135ebeb3e27a776\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2025-06-08T16:40:02+00:00",
+    "tag": "v4.9.5"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.9.3-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.3/flood-linux-x64.deb\nSize: 27714958\nMD5sum: d687605027a161962370b06433ea7597\nSHA1: 45a102b97d50851a6511182205d593d9af0132a9\nSHA256: 3fa3826a15a765f97756bc6a026be5423cdf0b9cdc7c91207cce4904a6c6ab39\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-01-29T18:27:54+00:00",
     "tag": "v4.9.3"
