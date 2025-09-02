@@ -1,6 +1,6 @@
 [project]
 name = 'project'
-requires-python = "==3.13.5"
+requires-python = "==3.13.7"
 version = '0'
 dependencies = ['httpx==0.28.1', 'pydantic==2.11.7']
 
