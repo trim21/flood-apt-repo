@@ -2,6 +2,20 @@
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.10.0-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.10.0/flood-linux-x64.deb\nSize: 27298034\nMD5sum: 7b483458fdbae5110139e4c42b2c1bdd\nSHA1: 8d70505165a90c64a17847f4d285cf4ee1a27400\nSHA256: 1478f648d73c433adb3db0d6c23220591e4731a3b4f4b9b59028b83b6868c283\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2025-10-03T17:11:18+00:00",
+    "tag": "v4.10.0"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.10.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.10.0/flood-linux-arm64.deb\nSize: 26965372\nMD5sum: bdff5ae922e6190012b462adaa957d80\nSHA1: c0b2a4194ad99df3c451c4cc20369b70f711296d\nSHA256: 0b715e7463363a51693d7733ae70570aca1abb18bf389942fd1694cb67e8438f\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2025-10-03T17:11:18+00:00",
+    "tag": "v4.10.0"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.9.5-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.9.5/flood-linux-x64.deb\nSize: 27253806\nMD5sum: ac12dd9ce81d6c3b0ea4dec227f363b3\nSHA1: fec0dcf0a411f88368e4936c301906ea326f4e74\nSHA256: c2acf57a85b033c94c308cbd7b918e142c58b238ff12a764805faa67692ca351\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-06-08T16:40:02+00:00",
     "tag": "v4.9.5"
