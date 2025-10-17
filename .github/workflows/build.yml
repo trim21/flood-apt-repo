@@ -39,10 +39,10 @@ jobs:
       - name: Generate package index
         run: uv run python main.py
         env:
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ github.token }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: '${{ secrets.PAT }}'
+          # github_token: '${{ secrets.PAT }}'
           publish_dir: ./dist/
