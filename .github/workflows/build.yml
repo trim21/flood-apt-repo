@@ -41,8 +41,8 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          token: '${{ secrets.PAT }}'
+          github_token: '${{ secrets.PAT }}'
+          publish_dir: ./dist/
