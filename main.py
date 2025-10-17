@@ -18,7 +18,7 @@ from pydantic import AwareDatetime, TypeAdapter
 
 IS_CI = "CI" in os.environ
 
-headers = {}
+headers: dict[str, str] = {}
 if "PAT" in os.environ:
     headers["Authorization"] = "token " + os.environ["PAT"]
 
@@ -105,7 +105,7 @@ def handle_repo(repo: str) -> datetime:
 
     find = False
 
-    packages = []
+    packages: list[PackageCache] = []
 
     try:
         for tag in TypeAdapter(list[Release]).validate_python(

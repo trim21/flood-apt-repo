@@ -5,13 +5,13 @@ on:
     branches: [master]
   workflow_dispatch: {}
   schedule:
-    - cron: "30 23 * * *"
+    - cron: '30 23 * * *'
 
 permissions:
   contents: write
 
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref }}"
+  group: '${{ github.workflow }}-${{ github.ref }}'
   cancel-in-progress: true
 
 jobs:
@@ -24,15 +24,17 @@ jobs:
 
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Install the latest version of uv
         uses: astral-sh/setup-uv@v6
 
       - run: uv sync --frozen
 
-      - run: |
-          git clone https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --branch gh-pages --depth=1 dist
+      - uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: dist
 
       - name: Generate package index
         run: uv run python main.py
@@ -40,15 +42,7 @@ jobs:
           PAT: ${{ secrets.PAT }}
 
       - name: Deploy to GitHub Pages
-        working-directory: dist
-        run: |
-          if test -z "$(git status --porcelain)" ; then
-            echo 'nothing new'
-            exit 0
-          fi
-
-          git add .
-
-          git -c user.name=GitHub -c user.email=noreply@github.com commit -m "Auto deploy from GitHub Actions build $(date --iso-8601=seconds)"
-
-          git push origin +HEAD:gh-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: '${{ secrets.PAT }}'
