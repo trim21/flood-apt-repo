@@ -2,6 +2,20 @@
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.12.5-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.12.5/flood-linux-x64.deb\nSize: 39131494\nMD5sum: d3c32d27eb818d9f520bb3fd0f63b21b\nSHA1: dfb52f4120a38659a4bc8339b10c9be7611f266b\nSHA256: a91e5d61de994dc4dbe1f27255780574e077e9149d53ae7858c42d8bd3081e0f\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-02-07T15:25:16+00:00",
+    "tag": "v4.12.5"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.12.5-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.12.5/flood-linux-arm64.deb\nSize: 36481282\nMD5sum: a9727986c712cbe4d8efad92c98e72c7\nSHA1: 663cec9bcd89403a3d4092a4fcf9a99e5dedc89b\nSHA256: d2faa53e119b55eeb25bc57357a9185446b31046cf9f106e4d8de14aa6cac78d\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-02-07T15:25:16+00:00",
+    "tag": "v4.12.5"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.11.0-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.11.0/flood-linux-x64.deb\nSize: 27298796\nMD5sum: d4725ab9504ce403e3bc74195a5fcb2b\nSHA1: 5c52ae353a7815a7c509f919f46dbdcc5e1da76d\nSHA256: 88be90b3e445db55a1580692a702e22bd41daa3fc32acf65ac6e4797205d52d2\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2025-10-17T13:23:35+00:00",
     "tag": "v4.11.0"
