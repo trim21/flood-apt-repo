@@ -1,13 +1,13 @@
 Package: flood
-Version: 4.12.5-0
+Version: 4.12.6-0
 Architecture: amd64
 Maintainer: Jesse Chan <jc@linux.com>
 Recommends: mediainfo
-Filename: ./pool/main/jesec/flood/v4.12.5/flood-linux-x64.deb
-Size: 39131494
-MD5sum: d3c32d27eb818d9f520bb3fd0f63b21b
-SHA1: dfb52f4120a38659a4bc8339b10c9be7611f266b
-SHA256: a91e5d61de994dc4dbe1f27255780574e077e9149d53ae7858c42d8bd3081e0f
+Filename: ./pool/main/jesec/flood/v4.12.6/flood-linux-x64.deb
+Size: 48502776
+MD5sum: 76bae2fee2fdfc09fd9b2f5a96bab2a3
+SHA1: 047115fdeb2f9a1496acc843a272b19f7bdf47d0
+SHA256: a9736f50faafd8535bc278eb9191e3034860b616ce7094f40383eec0ac7612b7
 Section: contrib/devel
 Priority: optional
 Homepage: https://github.com/jesec/flood
