@@ -8,5 +8,10 @@
   "lockFileMaintenance": {
     "enabled": true,
     "rebaseWhen": "behind-base-branch"
-  }
+  },
+  "labels": [
+    "ci:auto-merge",
+    "dependencies"
+  ],
+  "prConcurrentLimit": 3
 }
