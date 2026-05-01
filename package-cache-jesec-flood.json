@@ -2,6 +2,20 @@
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.13.10-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.13.10/flood-linux-x64.deb\nSize: 48628496\nMD5sum: 002e715488edb61bf64622c3409382ab\nSHA1: 931b6c926abb2faf015fbb47de125fa29a7d98b2\nSHA256: d98e9650364fe84c8e5adc97023c1daeaa2a9af2583e694391e72ed29fd4d273\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-05-01T10:09:04+00:00",
+    "tag": "v4.13.10"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.13.10-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.13.10/flood-linux-arm64.deb\nSize: 45983140\nMD5sum: af19faea387f919187348aefaee5961b\nSHA1: 7471f7b354a5d8e29fa5a39589c1fd747016cc43\nSHA256: 9eb5719d70eef5a7b942f112552d0a24cb87b69a4af9cff8e7505c2751e8f594\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-05-01T10:09:04+00:00",
+    "tag": "v4.13.10"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.13.9-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.13.9/flood-linux-x64.deb\nSize: 48532424\nMD5sum: 0f9c0510044ba956f70036e7d0dc0b04\nSHA1: 4759d50c8bd57e8d795256cf36fa303cf2db202f\nSHA256: 6d83228e717f536b0d89ed94a0211631513ae159ee002c143e0fdb34704cff27\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2026-04-09T17:01:24+00:00",
     "tag": "v4.13.9"
