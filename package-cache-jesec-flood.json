@@ -2,6 +2,20 @@
   {
     "arch": "amd64",
     "filename": "flood-linux-x64.deb",
+    "package": "Package: flood\nVersion: 4.14.0-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.14.0/flood-linux-x64.deb\nSize: 47896076\nMD5sum: 65ef5717000428f0ef11edf834a89ad1\nSHA1: 5d7181fa0794351f3cb1915db50891cc852aceb9\nSHA256: b136ed4ecfe6f46b9e352c5c757472340735b51983ab29da4815aded3146ff0c\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-05-08T17:08:36+00:00",
+    "tag": "v4.14.0"
+  },
+  {
+    "arch": "arm64",
+    "filename": "flood-linux-arm64.deb",
+    "package": "Package: flood\nVersion: 4.14.0-0\nArchitecture: arm64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.14.0/flood-linux-arm64.deb\nSize: 45236472\nMD5sum: c02fdff95927319e869e97c3f162f42a\nSHA1: 15c24a0515058b894668053f74b8ac9271df128e\nSHA256: ce28856cd89507a1ea710afe700c8dd3e757ace1015f629554c528dd6f8094a4\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
+    "published_at": "2026-05-08T17:08:36+00:00",
+    "tag": "v4.14.0"
+  },
+  {
+    "arch": "amd64",
+    "filename": "flood-linux-x64.deb",
     "package": "Package: flood\nVersion: 4.13.10-0\nArchitecture: amd64\nMaintainer: Jesse Chan <jc@linux.com>\nRecommends: mediainfo\nFilename: ./pool/main/jesec/flood/v4.13.10/flood-linux-x64.deb\nSize: 48628496\nMD5sum: 002e715488edb61bf64622c3409382ab\nSHA1: 931b6c926abb2faf015fbb47de125fa29a7d98b2\nSHA256: d98e9650364fe84c8e5adc97023c1daeaa2a9af2583e694391e72ed29fd4d273\nSection: contrib/devel\nPriority: optional\nHomepage: https://github.com/jesec/flood\nDescription: modern web user interface for various torrent clients\n\n",
     "published_at": "2026-05-01T10:09:04+00:00",
     "tag": "v4.13.10"
