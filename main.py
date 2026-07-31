@@ -98,7 +98,7 @@ def handle_repo(repo: str) -> datetime:
         package_cache = TypeAdapter(list[PackageCache]).validate_python(
             json.loads(cache_file_path.read_bytes())
         )
-    except (json.JSONDecodeError, pydantic.ValidationError):
+    except json.JSONDecodeError, pydantic.ValidationError:
         cache_file_path.unlink(missing_ok=True)
     except FileNotFoundError:
         pass
@@ -168,7 +168,7 @@ def handle_repo(repo: str) -> datetime:
                     m = arch_pattern.search(pkg)
                     if not m:
                         raise ValueError(
-                            "can not find arch in package file {!r}".format(pkg)
+                            f"can not find arch in package file {pkg!r}"
                         )
                     arch = m.group(1)
                     c = PackageCache(
@@ -196,7 +196,7 @@ def handle_repo(repo: str) -> datetime:
 
     for release in packages:
         top_dir = release_dir.joinpath(
-            config.component, "binary-{}".format(release.arch)
+            config.component, f"binary-{release.arch}"
         )
         top_dir.mkdir(exist_ok=True, parents=True)
         with top_dir.joinpath("Packages").open("a+") as f:
