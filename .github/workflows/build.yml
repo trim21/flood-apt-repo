@@ -4,6 +4,8 @@ on:
   push:
     branches: [master]
   workflow_dispatch: {}
+  repository_dispatch:
+    types: [build]
   schedule:
     - cron: '30 23 * * *'
 
